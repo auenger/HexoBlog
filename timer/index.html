@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Timer</title>
+		<link href="css/jscount.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="css/CustCs.css" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/monket-snow.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/monkey-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/monkey-16x16.png">
+		<style>
+			.dowebok {
+				position: absolute;
+				margin-left: 28%;
+				margin-top: 10%;
+			}
+
+			.worktime {
+				position: absolute;
+				margin-top: 20px;
+			}
+
+			.worktime input {
+				margin-left: 15px;
+				margin-right: 15px;
+				width: 110px;
+				padding: 5px 5px 5px 10px;
+				font-size: large;
+				border: 0;
+				border-radius: 3px;
+				color: #757575;
+				display: block;
+				background: transparent;
+			}
+
+			body {
+				margin: 0 !important;
+				width: 100%;
+				height: 99%;
+				background-color: #fff !important;
+			}
+
+			#particles-js {
+				width: 100% !important;
+				height: 99% !important;
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="particles-js"></div>
+		<div class="worktime">
+			<input id="start" type="time" tabindex="true" />
+		</div>
+
+		<div class="dowebok">
+			<div class="hours"></div>
+			<div class="minutes"></div>
+			<div class="seconds"></div>
+		</div>
+		<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+		<script src="js/jscount.js"></script>
+		<script src="js/particles.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/particlesData.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var STIME = "stime";
+			$(function() {
+				try {
+					var setDate = getCookie(STIME);
+					validate(setDate, "请设置打卡时间");
+					$("#start").val(setDate);
+					var date1 = new Date(setDefaultDate() + " " + setDate).getTime() + 9 * 3600 * 1000;
+					var d = date1;
+					var d = new Date(date1);
+					var myDate = d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':00';
+
+					$('.dowebok').flipTimer({
+						direction: 'down',
+						date: myDate
+					});
+				} catch(error) {
+					alert(error.message);
+				}
+			});
+
+			document.onkeydown = function(event) {
+				var e = event || window.event;
+				if(e && e.keyCode == 13) {
+					tst();
+				}
+			};
+
+			function tst() {
+				try {
+					var set = $("#start").val();
+					validate(set, "请设置打卡时间");
+					setCookie(STIME, set);
+					window.location.reload();
+				} catch(error) {
+					alert(error.message);
+				}
+			}
+
+			function validate(str, msg) {
+				if(null == str) {
+					throw new Error(msg);
+				}
+				str = str.trim();
+				if(str == "") {
+					throw new Error(msg);
+				}
+			}
+
+			function setCookie(name, value) {
+				var Days = 30;
+				var exp = new Date();
+				exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+				document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+			}
+
+			function getCookie(name) {
+				var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+				if(arr = document.cookie.match(reg))
+					return unescape(arr[2]);
+				else
+					return null;
+			}
+
+			function setDefaultDate() {
+				var myDate = new Date();
+				var month = myDate.getMonth() + 1;
+				var day = myDate.getDate();
+				month = (month.toString().length == 1) ? ("0" + month) : month;
+				day = (day.toString().length == 1) ? ("0" + day) : day;
+				var result = myDate.getFullYear() + '-' + month + '-' + day; //当前日期
+				return result;
+			}
+		</script>
+
+	</body>
+
+</html>

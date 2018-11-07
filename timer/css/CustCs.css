@@ -1,0 +1,376 @@
+a:hover {
+	text-decoration: none;
+}
+
+.container-fluid {
+	min-width: 1300px;
+	position: absolute;
+	width: 100%;
+	height: 600px;
+	margin-top: 90px;
+	background: transparent;
+	margin-left: -3%;
+}
+
+.row-fluid {
+	background: transparent;
+}
+
+.container-nav {
+	background: transparent;
+	padding-left: 50px;
+}
+
+.span6,
+.span5,
+.span3 {
+	background: transparent;
+}
+
+.navBar {
+	width: 10%;
+	float: right;
+	position: fixed;
+	margin-left: 9%;
+}
+
+.up {
+	animation: nav-up .25s 1 ease-in-out forwards;
+}
+
+@keyframes nav-up {
+	0% {
+		margin-top: -10px;
+	}
+	30% {
+		margin-top: -20px;
+	}
+	60% {
+		margin-top: -30px;
+	}
+	100% {
+		margin-top: -40px;
+	}
+}
+
+.navBar .bar_list .item {
+	width: 100%;
+	border-radius: 5px;
+	border: none;
+    display: block;
+    width: 100%;
+    height: 3em;
+    line-height: 3em;
+    padding: 0 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #777;
+    font-family: DINRegular,CenturyGothic;
+    margin-bottom: .5em;
+	cursor: pointer;
+}
+
+.navBar .bar_list .item:hover {
+	color: #1296db;
+}
+
+.navBar .bar_list .active {
+	background: hsla(0, 0%, 100%, .7);
+	color: #1296db;
+}
+
+.navBar .bar_list .item span {
+	padding-left: 15px;
+}
+
+
+/* 热门文章相关的css */
+
+.span3-con {
+	width: 75% !important;
+	margin-left: -12px !important;
+	border-radius: 3px;
+	padding: 10px;
+	background: hsla(0, 0%, 100%, .7);
+	margin-bottom: 10px;
+}
+
+.hot-list .hot-title {
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 7px;
+	border-bottom: 1px dashed rgba(1, 0, 0, 0.1);
+}
+
+.hot-list .hot-title span {
+	padding-left: 8px;
+}
+
+.hot-list .hot-item {
+	color: #555555;
+	display: block;
+	padding-top: 9px;
+	cursor: pointer;
+}
+
+.hot-list .hot-item:hover {
+	color: #1296db;
+}
+
+.hot-list .hot-item .fa-num {
+	padding: 2px;
+}
+
+
+/* 搜索框相关 */
+
+.search-bar {
+	line-height: 40px;
+}
+
+.search-bar input {
+	width: 70%;
+	margin: 0 !important;
+}
+
+.search-bar button {
+	border: 2.5px solid #c0c0c0;
+	margin-left: -6px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+
+/* 日期选择框 */
+
+.schedule-bar {
+	padding: 0 !important;
+}
+
+ul {
+	list-style: none;
+}
+
+#schedule-box {
+	width: 96%;
+	margin: 0 auto;
+	padding: 10px 4px;
+	font-size: 13px;
+}
+
+.schedule-hd {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 15px;
+}
+
+.today {
+	flex: 1;
+	text-align: center;
+}
+
+.ul-box {
+	overflow: hidden;
+	margin: 0 !important;
+}
+
+.ul-box>li {
+	float: left;
+	width: 14.28%;
+	text-align: center;
+	padding: 1px 0;
+}
+
+.other-month {
+	color: #999999;
+}
+
+.current-month {
+	color: #333333;
+}
+
+.today-style {
+	border-radius: 50%;
+	background: #58d321;
+}
+
+.arrow {
+	cursor: pointer;
+}
+
+.dayStyle {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 35px;
+	cursor: pointer;
+}
+
+.current-month>.dayStyle:hover {
+	background: gainsboro;
+	color: #ffffff;
+}
+
+.today-flag {
+	background: darkgray;
+	color: #fff;
+}
+
+.boxshaw {
+	box-shadow: 2px 2px 15px 2px #e3e3e3;
+}
+
+.selected-style {
+	background: #00BDFF;
+	color: #ffffff;
+}
+
+
+/* 文章列表 */
+
+.articles {
+	margin-top: .5em;
+}
+
+.articles>.article-list {
+	margin-bottom: 1em;
+	min-height: 1em;
+	overflow: hidden;
+}
+
+.article-list-item {
+	min-width: 600px !important;
+	margin-bottom: 1em;
+	background-color: hsla(0, 0%, 100%, .6);
+}
+
+.article-list-item a {
+	color: #555555;
+}
+
+.article-list-item>.item-content {
+	display: block;
+	overflow: hidden;
+	height: 8.5em;
+	padding: .5em;
+}
+
+.article-list-item>.item-content>.item-thumb {
+	float: left;
+	width: 12em;
+	height: 8.5em;
+	overflow: hidden;
+}
+
+.article-list-item>.item-content>.item-thumb .item-thumb-img {
+	min-width: 100%;
+	width: calc(100% + .5em);
+	max-width: calc(100% + .5em);
+	height: auto;
+	min-height: 8.5em;
+	border-color: transparent;
+	background-color: silver;
+	-webkit-opacity: 1;
+	-khtml-opacity: 1;
+	-moz-opacity: 1;
+	-ms-opacity: 1;
+	-o-opacity: 1;
+	opacity: 1;
+	-webkit-transform: translateX(0);
+	-khtml-transform: translateX(0);
+	transform: translateX(0);
+}
+
+.article-list-item>.item-content>.item-body {
+	max-width: 390px !important;;
+	float: left;
+	padding-left: .8em;
+	height: 8.5em;
+}
+
+.article-list-item>.item-content>.item-body>.item-title {
+	font-size: 1em;
+	font-weight: 700;
+	color: #333;
+	margin-top: .2em;
+	margin-bottom: .5em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.article-list-item>.item-content>.item-body>.item-description {
+	-webkit-box-orient: vertical;
+	font-size: .9em;
+	margin: 0;
+	margin-bottom: .3em;
+	height: 5em;
+	line-height: 1.8em;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+.article-list-item>.item-content>.item-body>.item-meta {
+	font-size: .9em;
+	height: 2em;
+	line-height: 2em;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-webkit-box-align: baseline;
+	-ms-flex-align: baseline;
+	align-items: baseline;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: normal;
+}
+
+.article-list-item>.item-content>.item-body>.item-meta i {
+	margin-right: .3em;
+	cursor: pointer;
+}
+
+.article-list-item>.item-content>.item-body>.item-meta span,
+a {
+	margin-right: .5em;
+}
+
+/* 标签列表 */
+.tags-bar>.aside-tag{
+    width: 19em;
+    border-bottom: 1rem solid transparent;
+    font-size: 14px;
+}
+.tags-bar>.aside-tag .aside-tag-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.tags-bar>.aside-tag .aside-tag-list .item{
+    display: inline-block;
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    height: 2em;
+    line-height: 2em;
+    text-transform: capitalize;
+    background-color: hsla(0,0%,77%,.4);
+}
+.tags-bar>.aside-tag .aside-tag-list .item .title{
+    color: #555555;
+    display: block;
+    padding: 0 .5em;
+    font-family: DINRegular,-apple-system,BlinkMacSystemFont,PingFang SC,Helvetica Neue,Hiragino Sans GB,Segoe UI,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,sans-serif;
+}

@@ -3,7 +3,8 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Timer</title>
+		<title>Timer | ImCoders</title>
+		<link href="/css/main.css" rel="stylesheet" type="text/css">
 		<link href="css/jscount.css" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="css/CustCs.css" />
 		<link rel="apple-touch-icon" sizes="180x180" href="/images/monket-snow.png">
@@ -18,7 +19,7 @@
 
 			.worktime {
 				position: absolute;
-				margin-top: 20px;
+				margin-top: 70px;
 			}
 
 			.worktime input {
@@ -46,10 +47,31 @@
 				height: 99% !important;
 				position: absolute;
 			}
+			.ImCoders {
+				position: absolute;
+				padding: 20px;
+				font-size: large;
+				margin-left: 20px;
+				z-index: 999;
+			}
 		</style>
 	</head>
 
 	<body>
+		<div class="ImCoders">
+	<div class="site-meta ">
+
+		<div class="custom-logo-site-title">
+			<a href="https://www.imcoders.net/" class="brand" rel="start" style="opacity: 1;">
+				<span class="logo-line-before"></span>
+				<span class="site-title">ImCoders</span>
+				<span class="logo-line-after"></span>
+			</a>
+		</div>
+
+	</div>
+
+</div>
 		<div id="particles-js"></div>
 		<div class="worktime">
 			<input id="start" type="time" tabindex="true" />
@@ -72,14 +94,43 @@
 					validate(setDate, "请设置打卡时间");
 					$("#start").val(setDate);
 					var date1 = new Date(setDefaultDate() + " " + setDate).getTime() + 9 * 3600 * 1000;
-					var d = date1;
-					var d = new Date(date1);
-					var myDate = d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':00';
+					var now = new Date().getTime();
+					if(now < date1) {
+						var d = new Date(date1);
+						var myDate = d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':00';
 
-					$('.dowebok').flipTimer({
-						direction: 'down',
-						date: myDate
-					});
+						$('.dowebok').flipTimer({
+							direction: 'down',
+							date: myDate
+						});
+					} else {
+						var diff = date1 - new Date(setDefaultDate() + " 00:00:00").getTime();
+						var hours = Math.floor(diff / (3600 * 1000));
+						if(Number(hours) < 10) {
+							hours = "0" + hours;
+						}
+						var leave2 = diff % (3600 * 1000);
+						var minutes = Math.floor(leave2 / (60 * 1000));
+						if(Number(minutes) < 10) {
+							minutes = "0" + minutes;
+						}
+
+						var leave3 = leave2 % (60 * 1000); //计算分钟数后剩余的毫秒数
+						var seconds = Math.round(leave3 / 1000);
+						if(Number(seconds) < 10) {
+							seconds = "0" + seconds;
+						}
+
+						var d = new Date();
+
+						var myDate = d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate() + ' ' + hours + ':' + minutes + ':' + seconds;
+
+						$('.dowebok').flipTimer({
+							direction: 'up',
+							date: myDate
+						});
+					}
+
 				} catch(error) {
 					alert(error.message);
 				}

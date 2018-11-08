@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Pulsar替代Kafka？]]></title>
+    <url>%2F2018%2F11%2F08%2FPulsar%E6%9B%BF%E4%BB%A3Kafka%EF%BC%9F%2F</url>
+    <content type="text"><![CDATA[Pulsar是否要替代Kafka？ 具体内容我也没看呢，反正先占着位置 有一篇文章可以先看看未来是Pulsar的吗]]></content>
+      <categories>
+        <category>消息队列</category>
+      </categories>
+      <tags>
+        <tag>Pulsar</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo(Next) + GitHub + Netlify]]></title>
+    <url>%2F2018%2F11%2F06%2FHexo-Next-GitHub-Netlify%2F</url>
+    <content type="text"><![CDATA[Node.js 自动实现博客 Just Try就是展示一下 占个位置而已 以后慢慢补充内容]]></content>
+      <categories>
+        <category>Hexo 教程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+</search>

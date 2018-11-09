@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[Hexo(Next) + GitHub + Netlify]]></title>
     <url>%2F2018%2F11%2F06%2FHexo-Next-GitHub-Netlify%2F</url>
-    <content type="text"><![CDATA[Node.js 自动实现博客 Just Try就是展示一下 占个位置而已 以后慢慢补充内容]]></content>
+    <content type="text"><![CDATA[Node.js 自动实现博客 本篇文章就是按照最基本的操作来完成的一个自动化博客搭建，完全的傻瓜式的操作，跟着教程绝对搞的定。 重点是这个教程是Windows系统的 准备工作我们用到的主要环境就是Node.js，这玩意是根本，所以搞定它！ Node.js官网直接下载完事，根据自己的系统整一个最新版的安装吧没有环境的去下载 GitBash同样的另一个必要环节，Git没有的话也去下载安装一个,也搞最新的版本吧没有的也去整一个 检查环境是否搞定检查Node.js 有没有搞定 node -v 检查GitBash有没有搞定直接选个文件夹鼠标右键就OK 注册一个GithubGithub我们直接注册一个，注册都不会的就放弃吧GitHub 环境准备完毕，下面就正式开始了按照我们的心情，随便挑个地方放我们的代码哦]]></content>
       <categories>
         <category>Hexo 教程</category>
       </categories>

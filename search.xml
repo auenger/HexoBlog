@@ -1,53 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title>Pulsar替代Kafka？</title>
-      <link href="/2018/11/08/Pulsar%E6%9B%BF%E4%BB%A3Kafka%EF%BC%9F/"/>
-      <url>/2018/11/08/Pulsar%E6%9B%BF%E4%BB%A3Kafka%EF%BC%9F/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Pulsar是否要替代Kafka？"><a href="#Pulsar是否要替代Kafka？" class="headerlink" title="Pulsar是否要替代Kafka？"></a>Pulsar是否要替代Kafka？</h1><a id="more"></a><p>具体内容我也没看呢，反正先占着位置</p><p>有一篇文章可以先看看<a href="https://blog.csdn.net/liyiming2017/article/details/82875068" target="_blank" rel="noopener">未来是Pulsar的吗</a></p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title><![CDATA[Pulsar替代Kafka？]]></title>
+    <url>%2F2018%2F11%2F08%2FPulsar%E6%9B%BF%E4%BB%A3Kafka%EF%BC%9F%2F</url>
+    <content type="text"><![CDATA[Pulsar是否要替代Kafka？ 具体内容我也没看呢，反正先占着位置 有一篇文章可以先看看未来是Pulsar的吗]]></content>
       <categories>
-          
-          <category> 消息队列 </category>
-          
+        <category>消息队列</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Pulsar </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Hexo(Next) + GitHub + Netlify</title>
-      <link href="/2018/11/06/Hexo-Next-GitHub-Netlify/"/>
-      <url>/2018/11/06/Hexo-Next-GitHub-Netlify/</url>
-      
-        <content type="html"><![CDATA[<p><strong> 18步搞定自动发布个人博客 </strong></p><p><img src="https://i.loli.net/2018/11/12/5be8f3abb3203.jpg" alt="教父.jpg"></p><a id="more"></a><p>本篇文章就是按照最基本的操作来完成的一个自动化博客搭建，完全的傻瓜式的操作，跟着教程绝对搞的定。</p><p><strong> 重点是这个教程是Windows系统的，OS/Linux自行根据步骤脑补一下 </strong></p><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>我们用到的主要环境就是Node.js，这玩意是根本，所以搞定它！</p><h3 id="1、Node-js"><a href="#1、Node-js" class="headerlink" title="1、Node.js"></a>1、Node.js</h3><p>官网直接下载完事，根据自己的系统整一个最新版的安装吧<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">没有环境的去下载</a></p><h3 id="2、GitBash"><a href="#2、GitBash" class="headerlink" title="2、GitBash"></a>2、GitBash</h3><p>同样的另一个必要环节，Git没有的话也去下载安装一个,也搞最新的版本吧<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">没有的也去整一个</a></p><h3 id="3、-检查环境是否搞定"><a href="#3、-检查环境是否搞定" class="headerlink" title="3、 检查环境是否搞定"></a>3、 检查环境是否搞定</h3><p>检查Node.js 有没有搞定</p><blockquote><p>node -v</p></blockquote><p><img src="https://i.loli.net/2018/11/09/5be52ef99d917.jpg" alt="Node.js"></p><p>检查GitBash有没有搞定直接选个文件夹鼠标右键就OK<br><img src="https://i.loli.net/2018/11/09/5be52ef949c3c.png" alt="GitBash"></p><h3 id="4、注册一个Github"><a href="#4、注册一个Github" class="headerlink" title="4、注册一个Github"></a>4、注册一个Github</h3><p>Github我们直接注册一个，注册都不会的就放弃吧<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></p><h2 id="环境准备完毕，下面就正式开始了"><a href="#环境准备完毕，下面就正式开始了" class="headerlink" title="环境准备完毕，下面就正式开始了"></a>环境准备完毕，下面就正式开始了</h2><h3 id="5、看心情选位置建个文件夹"><a href="#5、看心情选位置建个文件夹" class="headerlink" title="5、看心情选位置建个文件夹"></a>5、看心情选位置建个文件夹</h3><p>在当前文件夹下启动命令行，之前我们已经安装了gitbash所以可以直接右键启动gitbash或许方便一些<br><img src="https://i.loli.net/2018/11/12/5be8d7fce5cdf.png" alt="gitbashhear.png"></p><h3 id="6、安装hexo"><a href="#6、安装hexo" class="headerlink" title="6、安装hexo"></a>6、安装hexo</h3><p>下面重点就来了，我们用的是Hexo框架，Hexo本身就集成blog框架，而且目前已经有很多成熟的主题可以使用所以我们直接选择使用hexo</p><p>安装指令：</p><blockquote><p>npm install hexo -g</p></blockquote><p>这个过程可能需要一点点时间，不要着急静静等待<br><img src="https://i.loli.net/2018/11/12/5be8d956353a5.png" alt="installHexoo.png"></p><h3 id="7、检查hexo是否成功安装"><a href="#7、检查hexo是否成功安装" class="headerlink" title="7、检查hexo是否成功安装"></a>7、检查hexo是否成功安装</h3><p> 同样我们确认一下hexo是否成功安装</p><blockquote><p>hexo -v</p></blockquote><p> <img src="https://i.loli.net/2018/11/12/5be8de7c63ff2.png" alt="hexo-v.png"></p><h3 id="8、hexo初始化"><a href="#8、hexo初始化" class="headerlink" title="8、hexo初始化"></a>8、hexo初始化</h3><p>成功安装完hexo，我们就可以对hexo进行初始化，就是拉取hexo的框架代码，这一步骤时间可能会久一点，毕竟是下载文件</p><blockquote><p>hexo init</p></blockquote><p>等待的过程中你可以看见文件一点点被下载过来，最后你会看见提示 Start blogging with Hexo！是不是很激动了！<br><img src="https://i.loli.net/2018/11/12/5be8da5f9b3c6.png" alt="hexointi.png"></p><h3 id="9、安装需要的组件"><a href="#9、安装需要的组件" class="headerlink" title="9、安装需要的组件"></a>9、安装需要的组件</h3><p>初始化完成后，我们需要继续安装hexo的其他组件</p><blockquote><p>npm install</p></blockquote><p><img src="https://i.loli.net/2018/11/12/5be8db3515f02.png" alt="npm-install.png"></p><h3 id="10、hexo生成"><a href="#10、hexo生成" class="headerlink" title="10、hexo生成"></a>10、hexo生成</h3><p>这时候我们不需要进行修改，先按照模板生成一下(hexo generate 可以直接简写如下)</p><blockquote><p>hexo g</p></blockquote><p>我们可以直接看出指令帮我们生成了静态页面<br><img src="https://i.loli.net/2018/11/12/5be8dc5b5ddde.png" alt="hexog.png"></p><h3 id="11、hexo本地启动"><a href="#11、hexo本地启动" class="headerlink" title="11、hexo本地启动"></a>11、hexo本地启动</h3><p>生成玩页面，我们就让服务在我们本地跑起来(hexo server 可以直接简写如下)</p><blockquote><p>hexo s</p></blockquote><p>这时候本地默认使用的是4000端口，可能会被占用<br><img src="https://i.loli.net/2018/11/12/5be8dcf2e772e.png" alt="port4000.png"><br>我们可以更换本地的端口号(hexo server -p 5000)</p><blockquote><p>hexo s -p 5000</p></blockquote><p><img src="https://i.loli.net/2018/11/12/5be8dd781741e.png" alt="port5000.png"><br>Hexo is running!Hexo is running!Hexo is running!</p><p>在浏览器打开<a href="http://localhost:5000/" target="_blank" rel="noopener">http://localhost:5000/</a> 我们就可以看到Hexo的默认blog主题<br><img src="https://i.loli.net/2018/11/12/5be8ddd37e0d5.png" alt="hexoDefault.png"></p><h3 id="12、新建一篇blog"><a href="#12、新建一篇blog" class="headerlink" title="12、新建一篇blog"></a>12、新建一篇blog</h3><p>我们回到刚刚的命令行，ctrl+c 停止服务，然后新建一片文章</p><blockquote><p>hexo new post “Hexo Hello World!”</p></blockquote><p><img src="https://i.loli.net/2018/11/12/5be8e20b6a122.png" alt="helloworld.png"><br>根据路径找到对应的 .md文件(\source_posts\Hexo-Hello-World.md)就可以使用markdown写我们自己的东西了<br>然后使用</p><blockquote><p>hexo g</p></blockquote><p>打包</p><blockquote><p>hexo s</p></blockquote><p>启动服务，我们就可以看到我们自己新建的文章。</p><h2 id="代码打包上传到并发布"><a href="#代码打包上传到并发布" class="headerlink" title="代码打包上传到并发布"></a>代码打包上传到并发布</h2><h3 id="13、gitbash配置"><a href="#13、gitbash配置" class="headerlink" title="13、gitbash配置"></a>13、gitbash配置</h3><p>gitbash配置可以自行查找教程<a href="https://blog.csdn.net/zzfenglin/article/details/53147840" target="_blank" rel="noopener">附送一个传送门</a></p><h3 id="14、配置hexo的repository"><a href="#14、配置hexo的repository" class="headerlink" title="14、配置hexo的repository"></a>14、配置hexo的repository</h3><p>找到当前文件下的 _config.yml 文件，在文件最后修改repository。</p><blockquote><p>deploy:<br>    type: git<br>    repository: <a href="https://github.com/youname/yourrepo.git" target="_blank" rel="noopener">https://github.com/youname/yourrepo.git</a><br>    branch: master</p></blockquote><h3 id="15、安装hexo打包拓展"><a href="#15、安装hexo打包拓展" class="headerlink" title="15、安装hexo打包拓展"></a>15、安装hexo打包拓展</h3><p>我们在使用打包提交之前需要先安装一个拓展插件</p><blockquote><p>npm install hexo-deployer-git –save</p></blockquote><h3 id="16、打包提交到github"><a href="#16、打包提交到github" class="headerlink" title="16、打包提交到github"></a>16、打包提交到github</h3><p>使用打包与生成指令，生成静态页面并提交到github</p><blockquote><p>hexo d -g</p></blockquote><p>提交成功后你就可以在你的GitHub上面看到自己提交的静态页面代码了</p><h3 id="17、netlify自动部署"><a href="#17、netlify自动部署" class="headerlink" title="17、netlify自动部署"></a>17、netlify自动部署</h3><p>我们可以使用<a href="https://app.netlify.com/" target="_blank" rel="noopener">netlify</a>进行GitHub代码的自动部署，并且可以使用netlify功能进行域名绑定和使用他免费的HTTPS证书。具体教程<a href="https://www.cnblogs.com/codernie/p/9062104.html" target="_blank" rel="noopener">传送门</a>。</p><h3 id="18、自定义域名"><a href="#18、自定义域名" class="headerlink" title="18、自定义域名"></a>18、自定义域名</h3><p>使用netlify的好处就是，我们可以开心的使用自己的域名进行访问（域名不备案也是可以使用的），我们在netlify设置成功后可以获得一个netlify的二级域名，这时候我们可以在自己的域名管理处设置一下CNAME把自己的域名解析到netlify，这样我们就可以开开心心的使用自己的域名访问自己的blog了！<br><img src="https://i.loli.net/2018/11/12/5be8e7dd84669.png" alt="cname.png"></p><p><strong> 18步搞定个人站 </strong></p>]]></content>
-      
-      
+      <tags>
+        <tag>Pulsar</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo(Next) + GitHub + Netlify]]></title>
+    <url>%2F2018%2F11%2F06%2FHexo-Next-GitHub-Netlify%2F</url>
+    <content type="text"><![CDATA[18步搞定自动发布个人博客 本篇文章就是按照最基本的操作来完成的一个自动化博客搭建，完全的傻瓜式的操作，跟着教程绝对搞的定。 重点是这个教程是Windows系统的，OS/Linux自行根据步骤脑补一下 准备工作我们用到的主要环境就是Node.js，这玩意是根本，所以搞定它！ 1、Node.js官网直接下载完事，根据自己的系统整一个最新版的安装吧没有环境的去下载 2、GitBash同样的另一个必要环节，Git没有的话也去下载安装一个,也搞最新的版本吧没有的也去整一个 3、 检查环境是否搞定检查Node.js 有没有搞定 node -v 检查GitBash有没有搞定直接选个文件夹鼠标右键就OK 4、注册一个GithubGithub我们直接注册一个，注册都不会的就放弃吧GitHub 环境准备完毕，下面就正式开始了5、看心情选位置建个文件夹在当前文件夹下启动命令行，之前我们已经安装了gitbash所以可以直接右键启动gitbash或许方便一些 6、安装hexo下面重点就来了，我们用的是Hexo框架，Hexo本身就集成blog框架，而且目前已经有很多成熟的主题可以使用所以我们直接选择使用hexo 安装指令： npm install hexo -g 这个过程可能需要一点点时间，不要着急静静等待 7、检查hexo是否成功安装 同样我们确认一下hexo是否成功安装 hexo -v 8、hexo初始化成功安装完hexo，我们就可以对hexo进行初始化，就是拉取hexo的框架代码，这一步骤时间可能会久一点，毕竟是下载文件 hexo init 等待的过程中你可以看见文件一点点被下载过来，最后你会看见提示 Start blogging with Hexo！是不是很激动了！ 9、安装需要的组件初始化完成后，我们需要继续安装hexo的其他组件 npm install 10、hexo生成这时候我们不需要进行修改，先按照模板生成一下(hexo generate 可以直接简写如下) hexo g 我们可以直接看出指令帮我们生成了静态页面 11、hexo本地启动生成玩页面，我们就让服务在我们本地跑起来(hexo server 可以直接简写如下) hexo s 这时候本地默认使用的是4000端口，可能会被占用我们可以更换本地的端口号(hexo server -p 5000) hexo s -p 5000 Hexo is running!Hexo is running!Hexo is running! 在浏览器打开http://localhost:5000/ 我们就可以看到Hexo的默认blog主题 12、新建一篇blog我们回到刚刚的命令行，ctrl+c 停止服务，然后新建一片文章 hexo new post “Hexo Hello World!” 根据路径找到对应的 .md文件(\source_posts\Hexo-Hello-World.md)就可以使用markdown写我们自己的东西了然后使用 hexo g 打包 hexo s 启动服务，我们就可以看到我们自己新建的文章。 代码打包上传到并发布13、gitbash配置gitbash配置可以自行查找教程附送一个传送门 14、配置hexo的repository找到当前文件下的 _config.yml 文件，在文件最后修改repository。 deploy: type: git repository: https://github.com/youname/yourrepo.git branch: master 15、安装hexo打包拓展我们在使用打包提交之前需要先安装一个拓展插件 npm install hexo-deployer-git –save 16、打包提交到github使用打包与生成指令，生成静态页面并提交到github hexo d -g 提交成功后你就可以在你的GitHub上面看到自己提交的静态页面代码了 17、netlify自动部署我们可以使用netlify进行GitHub代码的自动部署，并且可以使用netlify功能进行域名绑定和使用他免费的HTTPS证书。具体教程传送门。 18、自定义域名使用netlify的好处就是，我们可以开心的使用自己的域名进行访问（域名不备案也是可以使用的），我们在netlify设置成功后可以获得一个netlify的二级域名，这时候我们可以在自己的域名管理处设置一下CNAME把自己的域名解析到netlify，这样我们就可以开开心心的使用自己的域名访问自己的blog了！ 18步搞定个人站]]></content>
       <categories>
-          
-          <category> Hexo 教程 </category>
-          
+        <category>Hexo 教程</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-  
-  
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
 </search>

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【项目】对外支付梳理]]></title>
+    <url>%2F2019%2F02%2F15%2F%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91%E5%AF%B9%E5%A4%96%E6%94%AF%E4%BB%98%E6%A2%B3%E7%90%86%2F</url>
+    <content type="text"><![CDATA[重新针对对外支付功能进行整体的梳理与优化。对外支付最初目的是针对用户在退款或者支付异常时可以使用非正常流程退款，但是目前对外支付已经承担了更多赔付方面的功能，所以要整体进行重新梳理优化，还要考虑相关的数据清洗分析。 一、对外支付功能现状1.1运营平台对外支付 对外支付创建表单 表单字段 VueForm 备注 支付单类型 type 测试单报销需要上传凭证 订单号 orderSerialNo 支付方式 payMethod 支付宝/银行 支付回退类型 payBackType 目前仅有非原路 支付原因 reason 保险供应商 insuranceMerchant 收款单位 receiver 银行账号/支付宝账号(授权码) account 银行总行名称 mainBankId （支付方式-银行） 支行所在省 receivedBankProvinceId （支付方式-银行） 支行所在市 receivedBankCityId （支付方式-银行） 开户银行支行 bankId （支付方式-银行） 支付金额 amount 是否发送短信 sms 支付单类型（type） 12345678910111213141516171819202122PayoutTypeEnum &#123; /** 退余款 */ E1(1, &quot;退余款&quot;), /** 投诉赔款-同程承担 */ E2(2, &quot;投诉赔款-同程承担&quot;), /** 投诉赔款-供应商承担 */ E3(3, &quot;投诉赔款-供应商承担&quot;), /** 正常向供应商打款 */ E4(4, &quot;正常向供应商打款&quot;), /** 改签向航空公司打款 */ E5(5, &quot;改签向航空公司打款&quot;), /** 航延险垫付 */ E6(6, &quot;航延险垫付&quot;), /** 点评奖金充值 */ E7(7, &quot;点评奖金充值&quot;); &#125; 支付方式（payMethod）1234567PayMethodEnum &#123; /** 支付宝 */ ALIPAY(1, &quot;支付宝&quot;), /** 银行转账 */ BANK(2, &quot;银行转账&quot;); &#125; 1.2贵就赔理赔系统1.3保险平台理赔二、申请到支付系统（paycore）三、支付系统同步财务清分四、财务清分同步财务五、财务审核退款或驳回六、整体数据清理分析]]></content>
+      <categories>
+        <category>Company</category>
+      </categories>
+      <tags>
+        <tag>TCYL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[简直就是神仙画画]]></title>
     <url>%2F2019%2F01%2F30%2F%E7%AE%80%E7%9B%B4%E5%B0%B1%E6%98%AF%E7%A5%9E%E4%BB%99%E7%94%BB%E7%94%BB%2F</url>
     <content type="text"><![CDATA[一张图片就直接扎心里了 这两天刷B站随机随机被安利了一款windows桌面软件（upupoo），结果在大海捞针找壁纸的时候突然一个名词跃入眼帘 鬼刀 这种画风简直就是无法用语言形容，只能说自己没有文化只能一句卧槽走天下！ 后来才知道大佬本职也是程序员，副业才是画画 - - ，真赤鸡！]]></content>
@@ -19,7 +30,7 @@
   <entry>
     <title><![CDATA[公司相关系统信息记录]]></title>
     <url>%2F2019%2F01%2F14%2F%E5%85%AC%E5%8F%B8%E7%9B%B8%E5%85%B3%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E8%AE%B0%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[账号密码/配置等信息 统一权限接口账号账号:iflight.java.osspaymentcenter密码:osspaymentcenter!@#123线下密码：M7$J!%H4code:1f6ce25a-cccf-4286-a692-02b3ecb00e7e]]></content>
+    <content type="text"><![CDATA[账号密码/配置等信息/公司业务梗 统一权限接口账号账号:iflight.java.osspaymentcenter密码:osspaymentcenter!@#123线下密码：M7$J!%H4code:1f6ce25a-cccf-4286-a692-02b3ecb00e7e 业务梗： OS资源打款失败有监控（梁先杰可以操作重试）]]></content>
   </entry>
   <entry>
     <title><![CDATA[2019年工作任务处理]]></title>

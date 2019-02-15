@@ -108,24 +108,25 @@
 
 
 
-  <meta name="description" content="公司一个移动端项目使用Vue做页面，node中间件可以使用axios实现跨域请求，node作为代理实现跨域非常方面，所以有兴趣多了解一下。">
+  <meta name="description" content="重新针对对外支付功能进行整体的梳理与优化。对外支付最初目的是针对用户在退款或者支付异常时可以使用非正常流程退款，但是目前对外支付已经承担了更多赔付方面的功能，所以要整体进行重新梳理优化，还要考虑相关的数据清洗分析。">
+<meta name="keywords" content="TCYL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue+Node 项目尝试">
-<meta property="og:url" content="https://www.imcoders.net/2019/01/25/Vue-Node-项目尝试/index.html">
+<meta property="og:title" content="【项目】对外支付梳理">
+<meta property="og:url" content="https://www.imcoders.net/2019/02/15/【项目】对外支付梳理/index.html">
 <meta property="og:site_name" content="ImCoders">
-<meta property="og:description" content="公司一个移动端项目使用Vue做页面，node中间件可以使用axios实现跨域请求，node作为代理实现跨域非常方面，所以有兴趣多了解一下。">
+<meta property="og:description" content="重新针对对外支付功能进行整体的梳理与优化。对外支付最初目的是针对用户在退款或者支付异常时可以使用非正常流程退款，但是目前对外支付已经承担了更多赔付方面的功能，所以要整体进行重新梳理优化，还要考虑相关的数据清洗分析。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-28T08:10:38.888Z">
+<meta property="og:updated_time" content="2019-02-15T08:48:29.626Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue+Node 项目尝试">
-<meta name="twitter:description" content="公司一个移动端项目使用Vue做页面，node中间件可以使用axios实现跨域请求，node作为代理实现跨域非常方面，所以有兴趣多了解一下。">
+<meta name="twitter:title" content="【项目】对外支付梳理">
+<meta name="twitter:description" content="重新针对对外支付功能进行整体的梳理与优化。对外支付最初目的是针对用户在退款或者支付异常时可以使用非正常流程退款，但是目前对外支付已经承担了更多赔付方面的功能，所以要整体进行重新梳理优化，还要考虑相关的数据清洗分析。">
 
 
 
 
 
 
-  <link rel="canonical" href="https://www.imcoders.net/2019/01/25/Vue-Node-项目尝试/">
+  <link rel="canonical" href="https://www.imcoders.net/2019/02/15/【项目】对外支付梳理/">
 
 
 
@@ -135,7 +136,7 @@
   };
 </script>
 
-  <title>Vue+Node 项目尝试 | ImCoders</title>
+  <title>【项目】对外支付梳理 | ImCoders</title>
   
 
 
@@ -351,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.imcoders.net/2019/01/25/Vue-Node-项目尝试/">
+    <link itemprop="mainEntityOfPage" href="https://www.imcoders.net/2019/02/15/【项目】对外支付梳理/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Auenger">
@@ -368,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue+Node 项目尝试
+          <h1 class="post-title" itemprop="name headline">【项目】对外支付梳理
               
             
           </h1>
@@ -393,28 +394,34 @@
                 
               
 
-              <time title="创建时间：2019-01-25 18:23:22" itemprop="dateCreated datePublished" datetime="2019-01-25T18:23:22+08:00">2019-01-25</time>
+              <time title="创建时间：2019-02-15 15:59:00 / 修改时间：16:48:29" itemprop="dateCreated datePublished" datetime="2019-02-15T15:59:00+08:00">2019-02-15</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-28 16:10:38" itemprop="dateModified" datetime="2019-01-28T16:10:38+08:00">2019-01-28</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Company/" itemprop="url" rel="index"><span itemprop="name">Company</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -424,8 +431,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/25/Vue-Node-项目尝试/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/25/Vue-Node-项目尝试/" itemprop="commentCount"></span>
+                <a href="/2019/02/15/【项目】对外支付梳理/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/15/【项目】对外支付梳理/" itemprop="commentCount"></span>
                 </a>
               </span> -->
             
@@ -433,7 +440,7 @@
 
           
           
-             <span id="/2019/01/25/Vue-Node-项目尝试/" class="leancloud_visitors" data-flag-title="Vue+Node 项目尝试">
+             <span id="/2019/02/15/【项目】对外支付梳理/" class="leancloud_visitors" data-flag-title="【项目】对外支付梳理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-fire"></i>
@@ -465,8 +472,96 @@
       
 
       
-        <p>公司一个移动端项目使用Vue做页面，node中间件可以使用axios实现跨域请求，node作为代理实现跨域非常方面，所以有兴趣多了解一下。<br><a id="more"></a></p>
-<h3 id="Vue-vux"><a href="#Vue-vux" class="headerlink" title="Vue(vux)"></a>Vue(vux)</h3><h3 id="Node-axios"><a href="#Node-axios" class="headerlink" title="Node(axios)"></a>Node(axios)</h3>
+        <p>   重新针对对外支付功能进行整体的梳理与优化。对外支付最初目的是针对用户在退款或者支付异常时可以使用非正常流程退款，但是目前对外支付已经承担了更多赔付方面的功能，所以要整体进行重新梳理优化，还要考虑相关的数据清洗分析。<br><a id="more"></a></p>
+<h1 id="一、对外支付功能现状"><a href="#一、对外支付功能现状" class="headerlink" title="一、对外支付功能现状"></a>一、对外支付功能现状</h1><h2 id="1-1运营平台对外支付"><a href="#1-1运营平台对外支付" class="headerlink" title="1.1运营平台对外支付"></a>1.1运营平台对外支付</h2><p>   对外支付创建表单</p>
+<table>
+<thead>
+<tr>
+<th>表单字段</th>
+<th style="text-align:center">VueForm</th>
+<th style="text-align:right">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>   支付单类型</td>
+<td style="text-align:center">type</td>
+<td style="text-align:right">测试单报销需要上传凭证</td>
+</tr>
+<tr>
+<td>   订单号</td>
+<td style="text-align:center">orderSerialNo</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>   支付方式</td>
+<td style="text-align:center">payMethod</td>
+<td style="text-align:right">支付宝/银行</td>
+</tr>
+<tr>
+<td>   支付回退类型</td>
+<td style="text-align:center">payBackType</td>
+<td style="text-align:right">目前仅有非原路</td>
+</tr>
+<tr>
+<td>   支付原因</td>
+<td style="text-align:center">reason</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>   保险供应商</td>
+<td style="text-align:center">insuranceMerchant</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>   收款单位</td>
+<td style="text-align:center">receiver</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>   银行账号/支付宝账号(授权码)</td>
+<td style="text-align:center">account</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>   银行总行名称</td>
+<td style="text-align:center">mainBankId</td>
+<td style="text-align:right">（支付方式-银行）</td>
+</tr>
+<tr>
+<td>   支行所在省</td>
+<td style="text-align:center">receivedBankProvinceId</td>
+<td style="text-align:right">（支付方式-银行）</td>
+</tr>
+<tr>
+<td>   支行所在市</td>
+<td style="text-align:center">receivedBankCityId</td>
+<td style="text-align:right">（支付方式-银行）</td>
+</tr>
+<tr>
+<td>   开户银行支行</td>
+<td style="text-align:center">bankId</td>
+<td style="text-align:right">（支付方式-银行）</td>
+</tr>
+<tr>
+<td>   支付金额</td>
+<td style="text-align:center">amount</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>   是否发送短信</td>
+<td style="text-align:center">sms</td>
+<td style="text-align:right"></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong> 支付单类型（type） </strong><br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">PayoutTypeEnum &#123;</span><br><span class="line">                         /** 退余款 */</span><br><span class="line">                         E1(1, &quot;退余款&quot;),</span><br><span class="line"></span><br><span class="line">                         /** 投诉赔款-同程承担 */</span><br><span class="line">                         E2(2, &quot;投诉赔款-同程承担&quot;),</span><br><span class="line"></span><br><span class="line">                         /** 投诉赔款-供应商承担 */</span><br><span class="line">                         E3(3, &quot;投诉赔款-供应商承担&quot;),</span><br><span class="line"></span><br><span class="line">                         /** 正常向供应商打款 */</span><br><span class="line">                         E4(4, &quot;正常向供应商打款&quot;),</span><br><span class="line"></span><br><span class="line">                         /** 改签向航空公司打款 */</span><br><span class="line">                         E5(5, &quot;改签向航空公司打款&quot;),</span><br><span class="line"></span><br><span class="line">                         /** 航延险垫付 */</span><br><span class="line">                         E6(6, &quot;航延险垫付&quot;),</span><br><span class="line"></span><br><span class="line">                         /** 点评奖金充值 */</span><br><span class="line">                         E7(7, &quot;点评奖金充值&quot;);</span><br><span class="line">   	 &#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p><strong> 支付方式（payMethod）</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PayMethodEnum &#123;</span><br><span class="line">                           /** 支付宝 */</span><br><span class="line">                           ALIPAY(1, &quot;支付宝&quot;),</span><br><span class="line">                           </span><br><span class="line">                           /** 银行转账 */</span><br><span class="line">                           BANK(2, &quot;银行转账&quot;);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="1-2贵就赔理赔系统"><a href="#1-2贵就赔理赔系统" class="headerlink" title="1.2贵就赔理赔系统"></a>1.2贵就赔理赔系统</h2><h2 id="1-3保险平台理赔"><a href="#1-3保险平台理赔" class="headerlink" title="1.3保险平台理赔"></a>1.3保险平台理赔</h2><h1 id="二、申请到支付系统（paycore）"><a href="#二、申请到支付系统（paycore）" class="headerlink" title="二、申请到支付系统（paycore）"></a>二、申请到支付系统（paycore）</h1><h1 id="三、支付系统同步财务清分"><a href="#三、支付系统同步财务清分" class="headerlink" title="三、支付系统同步财务清分"></a>三、支付系统同步财务清分</h1><h1 id="四、财务清分同步财务"><a href="#四、财务清分同步财务" class="headerlink" title="四、财务清分同步财务"></a>四、财务清分同步财务</h1><h1 id="五、财务审核退款或驳回"><a href="#五、财务审核退款或驳回" class="headerlink" title="五、财务审核退款或驳回"></a>五、财务审核退款或驳回</h1><h1 id="六、整体数据清理分析"><a href="#六、整体数据清理分析" class="headerlink" title="六、整体数据清理分析"></a>六、整体数据清理分析</h1>
       
     </div>
 
@@ -484,6 +579,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/TCYL/" rel="tag"><i class="fa fa-tag"></i> TCYL</a>
+          
+        </div>
+      
 
       
       
@@ -493,8 +594,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/14/公司相关系统信息记录/" rel="next" title="公司相关系统信息记录">
-                <i class="fa fa-chevron-left"></i> 公司相关系统信息记录
+              <a href="/2019/01/30/简直就是神仙画画/" rel="next" title="简直就是神仙画画">
+                <i class="fa fa-chevron-left"></i> 简直就是神仙画画
               </a>
             
           </div>
@@ -502,10 +603,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/30/简直就是神仙画画/" rel="prev" title="简直就是神仙画画">
-                简直就是神仙画画 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -673,7 +770,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue-vux"><span class="nav-number">1.</span> <span class="nav-text">Vue(vux)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-axios"><span class="nav-number">2.</span> <span class="nav-text">Node(axios)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、对外支付功能现状"><span class="nav-number">1.</span> <span class="nav-text">一、对外支付功能现状</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1运营平台对外支付"><span class="nav-number">1.1.</span> <span class="nav-text">1.1运营平台对外支付</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2贵就赔理赔系统"><span class="nav-number">1.2.</span> <span class="nav-text">1.2贵就赔理赔系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3保险平台理赔"><span class="nav-number">1.3.</span> <span class="nav-text">1.3保险平台理赔</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、申请到支付系统（paycore）"><span class="nav-number">2.</span> <span class="nav-text">二、申请到支付系统（paycore）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、支付系统同步财务清分"><span class="nav-number">3.</span> <span class="nav-text">三、支付系统同步财务清分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、财务清分同步财务"><span class="nav-number">4.</span> <span class="nav-text">四、财务清分同步财务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、财务审核退款或驳回"><span class="nav-number">5.</span> <span class="nav-text">五、财务审核退款或驳回</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、整体数据清理分析"><span class="nav-number">6.</span> <span class="nav-text">六、整体数据清理分析</span></a></li></ol></div>
             
 
           </div>

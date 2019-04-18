@@ -1,282 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title>【项目】OS引擎内部分销结算财务开发</title>
-      <link href="/2019/02/27/%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91OS%E5%BC%95%E6%93%8E%E5%86%85%E9%83%A8%E5%88%86%E9%94%80%E7%BB%93%E7%AE%97%E8%B4%A2%E5%8A%A1%E5%BC%80%E5%8F%91/"/>
-      <url>/2019/02/27/%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91OS%E5%BC%95%E6%93%8E%E5%86%85%E9%83%A8%E5%88%86%E9%94%80%E7%BB%93%E7%AE%97%E8%B4%A2%E5%8A%A1%E5%BC%80%E5%8F%91/</url>
-      
-        <content type="html"><![CDATA[<p>19/02/27新需求，分销商减价更改原退改规则实现赌徒盈利。<br><a id="more"></a></p><h2 id="下单业务逻辑"><a href="#下单业务逻辑" class="headerlink" title="下单业务逻辑"></a>下单业务逻辑</h2><h3 id="下单时序"><a href="#下单时序" class="headerlink" title="下单时序"></a>下单时序</h3><img src="http://www.plantuml.com/plantuml/svg/hLJBJi905DtFLtJbZiJtWmI_n0rH5soK43y04q4UMceeYgyW8D45eiO7I0d-J6VQhlW51suPUsUgSU4AAEUSUyvzb2JZgRt4PY8PtzdJg5wZTqLxU4dx9grajTtKrdPAcoCgXZuOT51XPTt7p6DCBkkPQHcp48AHQoqYZDs_PTMoys8vLiq7B240Cnzjgue0omZWM6MdSuO0AmZWlZPeeMvRJSUOUbWD0R1UXXls0MiuIAPDCyy0ctPibf1Op7TdzuhqkAB5OaHkRsHTxcPKOrTzftNllXsmlW5_iaBBjhf4xlkOZDiSrSHNMhZXd2bJcePW2YS_C6UWffTEC_F3lJkWkNCYZoqIwWCU79Q-fTZfKuWECXMSDjVuZOqMWrE3Uu2fy0yV046xed9oMTQk2pIVDsiF5Kvm6GHd0lNI5qwjHT2sH9HGhjwbfTDnSBF3gzYVTRR_g9AKhG1US3QXr7MqZDoWSSGUMcwd8Mfjx8m6EKaUPBt34wznFHha_wGf6WMoC_2RLNN7oaADoGoeeJFpVTmUeJuvZ7oPFuFR71z6s3O43pEgyK-MRu8eQA46-FUhJ2X80mAt9hp_HrYk1qK22KDE5QU1_EA8VeWIV7Sf78BUR4fm2SrT0lvFgGNKD_O5"><h2 id="退改业务逻辑"><a href="#退改业务逻辑" class="headerlink" title="退改业务逻辑"></a>退改业务逻辑</h2><h3 id="改签时序"><a href="#改签时序" class="headerlink" title="改签时序"></a>改签时序</h3><img src="http://www.plantuml.com/plantuml/svg/ZPFFJi904CRl-nGzSVFWVsrIduGBKGzSa10Ue1xQj8Y8eQZOH89AyC0V3KOi9NqQPXTEl89Rj-XEImBd_SqtytqpI_APGZ5xcirdSaM5EM_K6YaNXRFpWh9DvAUvhbF70sy8D-yHi8C0wWoc_WCR-inlHi0k0fXVO_rx1EmXOFRv3ANMr7zXLJC2zbS0zDi0QmaS802CBXWV0ek0GmnKcj2vcWOkZ1seBqMEC6EPSqUFCyU4Q1etwR5U8AmgcaQYmBPEK3ug3t8u6um4JL1q79MJKdax5_onB0pNTOBIJDJySJmBsWqIj1nKsC6atPPWHC5SVsJDDa5vyZ8vFbvMBTDUMmp6MwNY8yg1s3Mk6WOIzohlL4LqAfs3WGUlTq9nCR54y8k9JT0bS1NvT5H5JC_yHcoRGfUWEmjTOGfFaQ1nT0A2VfbQLP67_BvHWA9165ZS5TxflojyVt98QnOjhaukM7zAh6T3OAIOUqih7RmINWpk4vWDLlgY-kL6RcFrwPpGHphebuOws32NaYrZEddSlygnjYi7JlwybKK_"><h3 id="退订时序"><a href="#退订时序" class="headerlink" title="退订时序"></a>退订时序</h3><img src="http://www.plantuml.com/plantuml/svg/bPFDJi9058NtynHTiNFXltRXax0Xwe9D9OG7A8iIH46ChOeaDg045q0r6B4smPVfdO6tS9ePoDmf8RZjVEVCFUTEII5NBELFyuMSLJAO-qQh4-EYU7PUDBQ9UZItRUg648xXvbq2EmYWRX17ZsmSiSYNm2u2M7J7HWy8s4F0xBCBjKuSlR1cHGBxAm3wxK1r0HmW09m1E1y2ay0X1Xe-zA_YQHj-NF0M9aUOgLRchgqpnuJ8ThPEK1acRsqy2oRysspK9QWdZggrA2WTJ0bgZADgFDCG43IlwR0dJWZApmLgN9FBVJutk2EeUncfhdkfWTIMpQIGPTBbSE3qifPM0mGXlDwBaGdQ5FTKLxi8gJeBJu9UG38_taQI-OdvlGsKk2gD_aTd0jNqyM-7beEinGiLzoOrwf7nNiNWB6gjQstzlcLhYY2vLjTepsbu2LCdmzgtjD7dAyDYQ3z3fSLgNzGkRzI3fizQmX_ve5yiyS61kPKQ6TEfpC9PktRbmAdegqL_">]]></content>
-      
-      
+<search>
+  <entry>
+    <title><![CDATA[【项目】OS引擎内部分销结算财务开发]]></title>
+    <url>%2F2019%2F02%2F27%2F%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91OS%E5%BC%95%E6%93%8E%E5%86%85%E9%83%A8%E5%88%86%E9%94%80%E7%BB%93%E7%AE%97%E8%B4%A2%E5%8A%A1%E5%BC%80%E5%8F%91%2F</url>
+    <content type="text"><![CDATA[19/02/27新需求，分销商减价更改原退改规则实现赌徒盈利。 下单业务逻辑下单时序 退改业务逻辑改签时序 退订时序]]></content>
       <categories>
-          
-          <category> Company </category>
-          
+        <category>Company</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> TCYL </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>【项目】结算站点Refund（退入）</title>
-      <link href="/2019/02/26/%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91%E7%BB%93%E7%AE%97%E7%AB%99%E7%82%B9Refund%EF%BC%88%E9%80%80%E5%85%A5%EF%BC%89/"/>
-      <url>/2019/02/26/%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91%E7%BB%93%E7%AE%97%E7%AB%99%E7%82%B9Refund%EF%BC%88%E9%80%80%E5%85%A5%EF%BC%89/</url>
-      
-        <content type="html"><![CDATA[<p>业务需求按照子引擎订单号进行退入申请，目前退改平台需要修改退入逻辑按照商品信息从订单获取子引擎订单号，之后用子引擎订单号到结算站申请相关退入。</p><p>所以需要开放以子引擎订单号为维度的相关退入接口。<br><a id="more"></a><br>据了解之前是退改平台通过结算接口查询相关子引擎的打款记录，然后按照打款流水进行退入申请，目前需求要修改相关逻辑按照上述逻辑进行退入。</p><img src="http://www.plantuml.com/plantuml/svg/u-HwsT3mRChEfpitF-tVeA1hf_1yz-JdwwP3-5OAx_TqF5qxuUcUgSyczptRslXimvQd_TlVx-cCoLDuFcNpY_NRd-oR_NJNbATJsu3cF6rToeMi7MGSN3VOh6SBTZxhNPUSavcQLn9Vcfdoec_xq_vfp-RqFkrQ23RrsVobBzOlUhf-9z3GPvsJdwtP1x6L2swEWYw68r_id_9qzZo86B8ce5Cnt8Eg4-8UP3qGNq4zet1e0G00"><hr><p><strong> Tips： </strong><br>关键节点就是怎么根据子引擎订单号定位具体的子引擎（client_uid）</p>]]></content>
-      
-      
+      <tags>
+        <tag>TCYL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【项目】结算站点Refund（退入）]]></title>
+    <url>%2F2019%2F02%2F26%2F%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91%E7%BB%93%E7%AE%97%E7%AB%99%E7%82%B9Refund%EF%BC%88%E9%80%80%E5%85%A5%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[业务需求按照子引擎订单号进行退入申请，目前退改平台需要修改退入逻辑按照商品信息从订单获取子引擎订单号，之后用子引擎订单号到结算站申请相关退入。 所以需要开放以子引擎订单号为维度的相关退入接口。据了解之前是退改平台通过结算接口查询相关子引擎的打款记录，然后按照打款流水进行退入申请，目前需求要修改相关逻辑按照上述逻辑进行退入。 Tips： 关键节点就是怎么根据子引擎订单号定位具体的子引擎（client_uid）]]></content>
       <categories>
-          
-          <category> Company </category>
-          
+        <category>Company</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> TCYL </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>【项目】结算站点Remit</title>
-      <link href="/2019/02/26/%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91%E7%BB%93%E7%AE%97%E7%AB%99%E7%82%B9Remit/"/>
-      <url>/2019/02/26/%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91%E7%BB%93%E7%AE%97%E7%AB%99%E7%82%B9Remit/</url>
-      
-        <content type="html"><![CDATA[<p>公司项目逻辑整理，结算站点Remit逻辑<br><a id="more"></a></p><h2 id="Remit"><a href="#Remit" class="headerlink" title="Remit"></a>Remit</h2><h3 id="Facede业务逻辑"><a href="#Facede业务逻辑" class="headerlink" title="Facede业务逻辑"></a>Facede业务逻辑</h3><p><div id="flowchart-0" class="flow-chart"></div></p><h3 id="GatewayService"><a href="#GatewayService" class="headerlink" title="GatewayService"></a><a name="GatewayService">GatewayService</a></h3><p><div id="flowchart-1" class="flow-chart"></div><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: 开始ex=>subroutine: 业务异常e=>end: 结束facadeIn=>inputoutput: Facade_Remit收到请求voreqConvert=>operation: 请求模型转换preFilter=>subroutine: 执行前拦截器execute=>operation: 执行业务逻辑|past:>#GatewayServicepostFilter=>subroutine: 执行后拦截器voresConvert=>operation: 响应模型转换cond1=>condition: gatewayMethod != nullcond2=>condition: request != nullcond3=>condition: response != nullcond4=>condition: validate(request) io=>inputoutput: 输出Responsest->facadeIn->cond1()cond1(yes)->cond2()cond1(no)->ex->io->econd2(yes)->cond3()cond2(no)->ex->io->econd3(yes)->cond4()cond3(no)->ex->io->econd4(no)->ex->io->econd4(yes)->voreqConvert->preFilter->execute->postFilter->voresConvert->io->e</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12,"theme":"simple"}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script><textarea id="flowchart-1-code" style="display: none">st=>start: 开始ex=>subroutine: GatewayServiceExceptioninput=>inputoutput: service(Request)io=>inputoutput: 输出Responsee=>end: 结束cond1=>condition: validate(client_uid)retrieveOrder=>subroutine: getOrderFromDataBasecond2=>condition: order == nullcreateOrder=>operation: 创建打款申请单数据模型cond3=>condition: 校验order中打款金额与结算渠道insertOrder=>operation: 写入订单对象publishSuccess=>subroutine: 广播申请成功事件asyncStatistic=>subroutine: 记录统计信息st->input->cond1cond1(no)->ex->econd1(yes)->retrieveOrder->cond2cond2(no)->publishSuccess->asyncStatistic->io->econd2(yes)->createOrder->cond3cond3(no)->ex->econd3(yes)->insertOrder->publishSuccess->asyncStatistic->io->e</textarea><textarea id="flowchart-1-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12,"theme":"simple"}</textarea><script>  var code = document.getElementById("flowchart-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-1-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-1", options);</script></p>]]></content>
-      
-      
+      <tags>
+        <tag>TCYL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【项目】结算站点Remit]]></title>
+    <url>%2F2019%2F02%2F26%2F%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91%E7%BB%93%E7%AE%97%E7%AB%99%E7%82%B9Remit%2F</url>
+    <content type="text"><![CDATA[公司项目逻辑整理，结算站点Remit逻辑 RemitFacede业务逻辑 GatewayServicest=>start: 开始 ex=>subroutine: 业务异常 e=>end: 结束 facadeIn=>inputoutput: Facade_Remit收到请求 voreqConvert=>operation: 请求模型转换 preFilter=>subroutine: 执行前拦截器 execute=>operation: 执行业务逻辑|past:>#GatewayService postFilter=>subroutine: 执行后拦截器 voresConvert=>operation: 响应模型转换 cond1=>condition: gatewayMethod != null cond2=>condition: request != null cond3=>condition: response != null cond4=>condition: validate(request) io=>inputoutput: 输出Response st->facadeIn->cond1() cond1(yes)->cond2() cond1(no)->ex->io->e cond2(yes)->cond3() cond2(no)->ex->io->e cond3(yes)->cond4() cond3(no)->ex->io->e cond4(no)->ex->io->e cond4(yes)->voreqConvert->preFilter->execute->postFilter->voresConvert->io->e{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12} var code = document.getElementById("flowchart-0-code").value; var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value)); var diagram = flowchart.parse(code); diagram.drawSVG("flowchart-0", options);st=>start: 开始 ex=>subroutine: GatewayServiceException input=>inputoutput: service(Request) io=>inputoutput: 输出Response e=>end: 结束 cond1=>condition: validate(client_uid) retrieveOrder=>subroutine: getOrderFromDataBase cond2=>condition: order == null createOrder=>operation: 创建打款申请单数据模型 cond3=>condition: 校验order中打款金额与结算渠道 insertOrder=>operation: 写入订单对象 publishSuccess=>subroutine: 广播申请成功事件 asyncStatistic=>subroutine: 记录统计信息 st->input->cond1 cond1(no)->ex->e cond1(yes)->retrieveOrder->cond2 cond2(no)->publishSuccess->asyncStatistic->io->e cond2(yes)->createOrder->cond3 cond3(no)->ex->e cond3(yes)->insertOrder->publishSuccess->asyncStatistic->io->e{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12} var code = document.getElementById("flowchart-1-code").value; var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-1-options").value)); var diagram = flowchart.parse(code); diagram.drawSVG("flowchart-1", options);]]></content>
       <categories>
-          
-          <category> Company </category>
-          
+        <category>Company</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> TCYL </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>JAVA脚手架</title>
-      <link href="/2019/02/25/JAVA%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
-      <url>/2019/02/25/JAVA%E8%84%9A%E6%89%8B%E6%9E%B6/</url>
-      
-        <content type="html"><![CDATA[<p>公司用的java脚手架，整理下相关的东西。<br><a id="more"></a><br><img src="\images\pasted-0.png" alt="upload successful"><br><img src="\images\pasted-1.png" alt="upload successful"></p><p>公司自己的java框架吧，以SpringMVC为基础集合其他相关技术的脚手架。</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    <entry>
-      <title>【项目】对外支付梳理</title>
-      <link href="/2019/02/15/%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91%E5%AF%B9%E5%A4%96%E6%94%AF%E4%BB%98%E6%A2%B3%E7%90%86/"/>
-      <url>/2019/02/15/%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91%E5%AF%B9%E5%A4%96%E6%94%AF%E4%BB%98%E6%A2%B3%E7%90%86/</url>
-      
-        <content type="html"><![CDATA[<p>重新针对对外支付功能进行整体的梳理与优化。对外支付最初目的是针对用户在退款或者支付异常时可以使用非正常流程退款，但是目前对外支付已经承担了更多赔付方面的功能，所以要整体进行重新梳理优化，还要考虑相关的数据清洗分析。<br><a id="more"></a></p><h1 id="一、对外支付功能现状"><a href="#一、对外支付功能现状" class="headerlink" title="一、对外支付功能现状"></a>一、对外支付功能现状</h1><h2 id="1-1-运营平台对外支付"><a href="#1-1-运营平台对外支付" class="headerlink" title="1.1 运营平台对外支付"></a>1.1 运营平台对外支付</h2><h2 id="1-2-贵就赔理赔系统"><a href="#1-2-贵就赔理赔系统" class="headerlink" title="1.2 贵就赔理赔系统"></a>1.2 贵就赔理赔系统</h2><h2 id="1-3-保险平台理赔"><a href="#1-3-保险平台理赔" class="headerlink" title="1.3 保险平台理赔"></a>1.3 保险平台理赔</h2><h2 id="1-4-B端订单调用"><a href="#1-4-B端订单调用" class="headerlink" title="1.4 B端订单调用"></a>1.4 B端订单调用</h2><h2 id="1-5-营销平台（新客返现）"><a href="#1-5-营销平台（新客返现）" class="headerlink" title="1.5 营销平台（新客返现）"></a>1.5 营销平台（新客返现）</h2><p>   对外支付创建表单</p><table><thead><tr><th>表单字段</th><th style="text-align:center">VueForm</th><th style="text-align:right">备注</th></tr></thead><tbody><tr><td>   支付单类型</td><td style="text-align:center">type</td><td style="text-align:right">测试单报销需要上传凭证</td></tr><tr><td>   订单号</td><td style="text-align:center">orderSerialNo</td><td style="text-align:right"></td></tr><tr><td>   支付方式</td><td style="text-align:center">payMethod</td><td style="text-align:right">支付宝/银行</td></tr><tr><td>   支付回退类型</td><td style="text-align:center">payBackType</td><td style="text-align:right">目前仅有非原路</td></tr><tr><td>   支付原因</td><td style="text-align:center">reason</td><td style="text-align:right"></td></tr><tr><td>   保险供应商</td><td style="text-align:center">insuranceMerchant</td><td style="text-align:right"></td></tr><tr><td>   收款单位</td><td style="text-align:center">receiver</td><td style="text-align:right"></td></tr><tr><td>   银行账号/支付宝账号(授权码)</td><td style="text-align:center">account</td><td style="text-align:right"></td></tr><tr><td>   银行总行名称</td><td style="text-align:center">mainBankId</td><td style="text-align:right">（支付方式-银行）</td></tr><tr><td>   支行所在省</td><td style="text-align:center">receivedBankProvinceId</td><td style="text-align:right">（支付方式-银行）</td></tr><tr><td>   支行所在市</td><td style="text-align:center">receivedBankCityId</td><td style="text-align:right">（支付方式-银行）</td></tr><tr><td>   开户银行支行</td><td style="text-align:center">bankId</td><td style="text-align:right">（支付方式-银行）</td></tr><tr><td>   支付金额</td><td style="text-align:center">amount</td><td style="text-align:right"></td></tr><tr><td>   是否发送短信</td><td style="text-align:center">sms</td><td style="text-align:right"></td></tr></tbody></table><blockquote><p><strong> 支付单类型（type） </strong><br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">PayoutTypeEnum &#123;</span><br><span class="line">                         /** 退余款 */</span><br><span class="line">                         E1(1, &quot;退余款&quot;),</span><br><span class="line"></span><br><span class="line">                         /** 投诉赔款-同程承担 */</span><br><span class="line">                         E2(2, &quot;投诉赔款-同程承担&quot;),</span><br><span class="line"></span><br><span class="line">                         /** 投诉赔款-供应商承担 */</span><br><span class="line">                         E3(3, &quot;投诉赔款-供应商承担&quot;),</span><br><span class="line"></span><br><span class="line">                         /** 正常向供应商打款 */</span><br><span class="line">                         E4(4, &quot;正常向供应商打款&quot;),</span><br><span class="line"></span><br><span class="line">                         /** 改签向航空公司打款 */</span><br><span class="line">                         E5(5, &quot;改签向航空公司打款&quot;),</span><br><span class="line"></span><br><span class="line">                         /** 航延险垫付 */</span><br><span class="line">                         E6(6, &quot;航延险垫付&quot;),</span><br><span class="line"></span><br><span class="line">                         /** 点评奖金充值 */</span><br><span class="line">                         E7(7, &quot;点评奖金充值&quot;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p><strong> 支付方式（payMethod）</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PayMethodEnum &#123;</span><br><span class="line">                           /** 支付宝 */</span><br><span class="line">                           ALIPAY(1, &quot;支付宝&quot;),</span><br><span class="line">                           </span><br><span class="line">                           /** 银行转账 */</span><br><span class="line">                           BANK(2, &quot;银行转账&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></blockquote><h1 id="二、申请到支付系统（paycore）"><a href="#二、申请到支付系统（paycore）" class="headerlink" title="二、申请到支付系统（paycore）"></a>二、申请到支付系统（paycore）</h1><h2 id="2-1申请支付单"><a href="#2-1申请支付单" class="headerlink" title="2.1申请支付单"></a>2.1申请支付单</h2><p>   支付系统仅用于生成支付单，不考虑详细业务逻辑。<br>   目前五个客户端请求支付系统的facad接口申请对外支付单。支付系统接口实现逻辑仅限于落单和接收财务清分回写结果并分发MQ消息，之后优化考虑全部砍掉，将所有逻辑收缩在财务清分。目前各平台请求申请接口会带入client_uid,之后可以直接沿用支付核心的配置，减少对接入方的影响。</p><h2 id="2-2考虑砍掉paycore"><a href="#2-2考虑砍掉paycore" class="headerlink" title="2.2考虑砍掉paycore"></a>2.2考虑砍掉paycore</h2><p>  paycore仅用于记录与结果分发，目前的逻辑与财务清分系统逻辑冗余，可以直接删掉paycore这部分逻辑直接财务清分进行结果分发。</p><h2 id="2-3paycore申请接口"><a href="#2-3paycore申请接口" class="headerlink" title="2.3paycore申请接口"></a>2.3paycore申请接口</h2><p>   <strong><em> outwardpayservice/outwardpayhandle </em></strong></p><blockquote><p><strong> OutwardPayRequest </strong><br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/** 全链路上下文id */</span><br><span class="line">private String traceId;</span><br><span class="line"></span><br><span class="line">/** 项目认证标识 */</span><br><span class="line">private String projectAuthId;</span><br><span class="line"></span><br><span class="line">/** 对外支付数据集合 */</span><br><span class="line">private List&lt;OutwardPayDataDTO&gt; outwardPayDatas;</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p><strong> OutwardPayDataDTO </strong><br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/** 项目对外支付流水号 */</span><br><span class="line">private String            projectOutwardPaySerialNo;</span><br><span class="line"></span><br><span class="line">/** 订单流水号 */</span><br><span class="line">private String            orderSerialNo;</span><br><span class="line"></span><br><span class="line">/** 收款账号 */</span><br><span class="line">private String            account;</span><br><span class="line"></span><br><span class="line">/** 交易金额 */</span><br><span class="line">private String            amount;</span><br><span class="line"></span><br><span class="line">/** ExtData对象json序列化字符串 */</span><br><span class="line">private String            extData;</span><br></pre></td></tr></table></figure></p></blockquote><p>   <strong><em> extData </em></strong><br>   ext拓展字段内容直接透传到财务情分，详情参考3.1财务清分MQ &gt;&gt; ExtDataInfo</p><h1 id="三、支付系统同步财务清分"><a href="#三、支付系统同步财务清分" class="headerlink" title="三、支付系统同步财务清分"></a>三、支付系统同步财务清分</h1><h2 id="3-1财务清分MQ"><a href="#3-1财务清分MQ" class="headerlink" title="3.1财务清分MQ"></a>3.1财务清分MQ</h2><blockquote><p><strong> MQPlayload </strong><br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> /** 项目对外支付流水号 */</span><br><span class="line">@JSONField(name = &quot;ProjectOutwardSerialId&quot;)</span><br><span class="line">private String            projectOutwardPaySerialNo;</span><br><span class="line"></span><br><span class="line">/** 订单流水号 */</span><br><span class="line">@JSONField(name = &quot;OrderSerialId&quot;)</span><br><span class="line">private String            orderSerialNo;</span><br><span class="line"></span><br><span class="line">/** 收款账号 */</span><br><span class="line">@JSONField(name = &quot;Account&quot;)</span><br><span class="line">private String            account;</span><br><span class="line"></span><br><span class="line">/** 交易金额 */</span><br><span class="line">@JSONField(name = &quot;Amount&quot;)</span><br><span class="line">private BigDecimal        amount;</span><br><span class="line"></span><br><span class="line">/** ExtData对象json序列化字符串 */</span><br><span class="line">@JSONField(name = &quot;ExtData&quot;)</span><br><span class="line">private String            extData;</span><br><span class="line"></span><br><span class="line">/** 对外支付单流水号 */</span><br><span class="line">@JSONField(name = &quot;OutwardSerialId&quot;)</span><br><span class="line">private String            outwardPaySerialNo;</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p><strong> ExtDataInfo </strong><br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">/** 业务审核人 */</span><br><span class="line">private String  creator;</span><br><span class="line"></span><br><span class="line">/** 收款人姓名 */</span><br><span class="line">private String  receivedName;</span><br><span class="line"></span><br><span class="line">/** 支付原因 */</span><br><span class="line">private String  paidRemark;</span><br><span class="line"></span><br><span class="line">/** 支付退回类型（0-默认（供应商使用0） 1-原路 2-非原路） */</span><br><span class="line">private Integer payBackType;</span><br><span class="line"></span><br><span class="line">/** 支付方式（1-支付宝 2-银行转账 3-快钱信用卡） */</span><br><span class="line">private Integer payMethod;</span><br><span class="line"></span><br><span class="line">/** 对外支付类型</span><br><span class="line"> * 0-其他 </span><br><span class="line"> * 1-退余款</span><br><span class="line"> * 2-投诉赔款—同程承担 </span><br><span class="line"> * 3-投诉赔款—供应商承担 </span><br><span class="line"> * 4-正常向供应商打款 </span><br><span class="line"> * 5-改签向航空公司打垮 </span><br><span class="line"> * 6-延误险垫付 </span><br><span class="line"> * 7-点评奖金充值</span><br><span class="line"> */</span><br><span class="line">private Integer type;</span><br><span class="line"></span><br><span class="line">/** 开户银行总行*/</span><br><span class="line">private String  receivedMainBank;</span><br><span class="line"></span><br><span class="line">/** 开户银行 */</span><br><span class="line">private String  receivedBank;</span><br><span class="line"></span><br><span class="line">/** 开户银行省 */</span><br><span class="line">private String  receivedBankProvince;</span><br><span class="line"></span><br><span class="line">/** 开户银行市 */</span><br><span class="line">private String  receivedBankCity;</span><br><span class="line"></span><br><span class="line">/** 支付方式（原路） */</span><br><span class="line">private Integer payType;</span><br><span class="line"></span><br><span class="line">/** 0、C端  1、B端 */</span><br><span class="line">private Integer businessType;</span><br><span class="line"></span><br><span class="line">/** 保险供应商 */</span><br><span class="line">private String  insuranceMerchant;</span><br></pre></td></tr></table></figure></p></blockquote><h2 id="3-2字段细节"><a href="#3-2字段细节" class="headerlink" title="3.2字段细节"></a>3.2字段细节</h2><blockquote><p><strong> 支付方式（payMethod） </strong><br>  目前只有 1-支付宝 2-银行转账</p></blockquote><h1 id="四、财务清分同步财务"><a href="#四、财务清分同步财务" class="headerlink" title="四、财务清分同步财务"></a>四、财务清分同步财务</h1><h2 id="4-1财务清分落单"><a href="#4-1财务清分落单" class="headerlink" title="4.1财务清分落单"></a>4.1财务清分落单</h2><p>目前财务清分落单仅为记录，主要记录公共财务的返回结果。仅存储必要的快照数据记录，之后将完整数据转换同步公共财务。</p><h1 id="五、财务审核退款或驳回"><a href="#五、财务审核退款或驳回" class="headerlink" title="五、财务审核退款或驳回"></a>五、财务审核退款或驳回</h1><h2 id="5-1财务回写清分通知"><a href="#5-1财务回写清分通知" class="headerlink" title="5.1财务回写清分通知"></a>5.1财务回写清分通知</h2><p>目前的业务逻辑是，财务审核通过/不通过的时候，通过DSF接口通知财务清分结果。清分系统收到结果之后，先修改对应记录单状态后发出通知MQ。</p><blockquote><p><strong> PayOutExtendMessage </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/** 支付单流水号 */</span><br><span class="line"> private String  paySerialId;</span><br><span class="line"> /** 是否成功（true-成功 2-false） */</span><br><span class="line"> private boolean status;</span><br><span class="line"> /** 描述信息（驳回原因） */</span><br><span class="line"> private String  message;</span><br><span class="line"> /** 驳回时间 */</span><br><span class="line"> private String rejectTime;</span><br></pre></td></tr></table></figure></p></blockquote><h2 id="5-2通知逻辑分析"><a href="#5-2通知逻辑分析" class="headerlink" title="5.2通知逻辑分析"></a>5.2通知逻辑分析</h2><p>目前来说，财务清分收到具体结果之后，通过项目对外支付流水号（ProjectOutwardSerialId）对外发放对外支付结果，目前消费者应该是上述的三个平台，订阅所有的结果MQ，确认最终结果。</p><h1 id="六、整体数据清理分析"><a href="#六、整体数据清理分析" class="headerlink" title="六、整体数据清理分析"></a>六、整体数据清理分析</h1><h2 id="6-1平台分析"><a href="#6-1平台分析" class="headerlink" title="6.1平台分析"></a>6.1平台分析</h2><p>三个平台通过支付系统申请对外支付后，进入清分系统已经无法区分出具体业务申请原因，所以对于赔付的数据梳理困难，目前的想法就是区分具体的申请平台，而且申请原因也需要进一步细分（可以考虑细分对外支付单类型）。</p><h2 id="6-2功能分析"><a href="#6-2功能分析" class="headerlink" title="6.2功能分析"></a>6.2功能分析</h2><p>对外支付功能，最初的想法就仅仅是进行订单的退款使用，但是现在另外一大作用是进行赔付，虽然对外支付确实可以使用并且在一定范围内使用简单，但是总感觉一个退款功能为主的接口用作赔付总会有欠缺，更重要的就是很难对数据进行监控，赔付这种业务还是有搞头的。</p>]]></content>
-      
-      
+      <tags>
+        <tag>TCYL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JAVA脚手架]]></title>
+    <url>%2F2019%2F02%2F25%2FJAVA%E8%84%9A%E6%89%8B%E6%9E%B6%2F</url>
+    <content type="text"><![CDATA[公司用的java脚手架，整理下相关的东西。 公司自己的java框架吧，以SpringMVC为基础集合其他相关技术的脚手架。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[【项目】对外支付梳理]]></title>
+    <url>%2F2019%2F02%2F15%2F%E3%80%90%E9%A1%B9%E7%9B%AE%E3%80%91%E5%AF%B9%E5%A4%96%E6%94%AF%E4%BB%98%E6%A2%B3%E7%90%86%2F</url>
+    <content type="text"><![CDATA[重新针对对外支付功能进行整体的梳理与优化。对外支付最初目的是针对用户在退款或者支付异常时可以使用非正常流程退款，但是目前对外支付已经承担了更多赔付方面的功能，所以要整体进行重新梳理优化，还要考虑相关的数据清洗分析。 一、对外支付功能现状1.1 运营平台对外支付1.2 贵就赔理赔系统1.3 保险平台理赔1.4 B端订单调用1.5 营销平台（新客返现） 对外支付创建表单 表单字段 VueForm 备注 支付单类型 type 测试单报销需要上传凭证 订单号 orderSerialNo 支付方式 payMethod 支付宝/银行 支付回退类型 payBackType 目前仅有非原路 支付原因 reason 保险供应商 insuranceMerchant 收款单位 receiver 银行账号/支付宝账号(授权码) account 银行总行名称 mainBankId （支付方式-银行） 支行所在省 receivedBankProvinceId （支付方式-银行） 支行所在市 receivedBankCityId （支付方式-银行） 开户银行支行 bankId （支付方式-银行） 支付金额 amount 是否发送短信 sms 支付单类型（type） 12345678910111213141516171819202122PayoutTypeEnum &#123; /** 退余款 */ E1(1, &quot;退余款&quot;), /** 投诉赔款-同程承担 */ E2(2, &quot;投诉赔款-同程承担&quot;), /** 投诉赔款-供应商承担 */ E3(3, &quot;投诉赔款-供应商承担&quot;), /** 正常向供应商打款 */ E4(4, &quot;正常向供应商打款&quot;), /** 改签向航空公司打款 */ E5(5, &quot;改签向航空公司打款&quot;), /** 航延险垫付 */ E6(6, &quot;航延险垫付&quot;), /** 点评奖金充值 */ E7(7, &quot;点评奖金充值&quot;); &#125; 支付方式（payMethod）1234567PayMethodEnum &#123; /** 支付宝 */ ALIPAY(1, &quot;支付宝&quot;), /** 银行转账 */ BANK(2, &quot;银行转账&quot;); &#125; 二、申请到支付系统（paycore）2.1申请支付单 支付系统仅用于生成支付单，不考虑详细业务逻辑。 目前五个客户端请求支付系统的facad接口申请对外支付单。支付系统接口实现逻辑仅限于落单和接收财务清分回写结果并分发MQ消息，之后优化考虑全部砍掉，将所有逻辑收缩在财务清分。目前各平台请求申请接口会带入client_uid,之后可以直接沿用支付核心的配置，减少对接入方的影响。 2.2考虑砍掉paycore paycore仅用于记录与结果分发，目前的逻辑与财务清分系统逻辑冗余，可以直接删掉paycore这部分逻辑直接财务清分进行结果分发。 2.3paycore申请接口 outwardpayservice/outwardpayhandle OutwardPayRequest 12345678/** 全链路上下文id */private String traceId;/** 项目认证标识 */private String projectAuthId;/** 对外支付数据集合 */private List&lt;OutwardPayDataDTO&gt; outwardPayDatas; OutwardPayDataDTO 1234567891011121314/** 项目对外支付流水号 */private String projectOutwardPaySerialNo;/** 订单流水号 */private String orderSerialNo;/** 收款账号 */private String account;/** 交易金额 */private String amount;/** ExtData对象json序列化字符串 */private String extData; extData ext拓展字段内容直接透传到财务情分，详情参考3.1财务清分MQ &gt;&gt; ExtDataInfo 三、支付系统同步财务清分3.1财务清分MQ MQPlayload 1234567891011121314151617181920212223 /** 项目对外支付流水号 */@JSONField(name = &quot;ProjectOutwardSerialId&quot;)private String projectOutwardPaySerialNo;/** 订单流水号 */@JSONField(name = &quot;OrderSerialId&quot;)private String orderSerialNo;/** 收款账号 */@JSONField(name = &quot;Account&quot;)private String account;/** 交易金额 */@JSONField(name = &quot;Amount&quot;)private BigDecimal amount;/** ExtData对象json序列化字符串 */@JSONField(name = &quot;ExtData&quot;)private String extData;/** 对外支付单流水号 */@JSONField(name = &quot;OutwardSerialId&quot;)private String outwardPaySerialNo; ExtDataInfo 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/** 业务审核人 */private String creator;/** 收款人姓名 */private String receivedName;/** 支付原因 */private String paidRemark;/** 支付退回类型（0-默认（供应商使用0） 1-原路 2-非原路） */private Integer payBackType;/** 支付方式（1-支付宝 2-银行转账 3-快钱信用卡） */private Integer payMethod;/** 对外支付类型 * 0-其他 * 1-退余款 * 2-投诉赔款—同程承担 * 3-投诉赔款—供应商承担 * 4-正常向供应商打款 * 5-改签向航空公司打垮 * 6-延误险垫付 * 7-点评奖金充值 */private Integer type;/** 开户银行总行*/private String receivedMainBank;/** 开户银行 */private String receivedBank;/** 开户银行省 */private String receivedBankProvince;/** 开户银行市 */private String receivedBankCity;/** 支付方式（原路） */private Integer payType;/** 0、C端 1、B端 */private Integer businessType;/** 保险供应商 */private String insuranceMerchant; 3.2字段细节 支付方式（payMethod） 目前只有 1-支付宝 2-银行转账 四、财务清分同步财务4.1财务清分落单目前财务清分落单仅为记录，主要记录公共财务的返回结果。仅存储必要的快照数据记录，之后将完整数据转换同步公共财务。 五、财务审核退款或驳回5.1财务回写清分通知目前的业务逻辑是，财务审核通过/不通过的时候，通过DSF接口通知财务清分结果。清分系统收到结果之后，先修改对应记录单状态后发出通知MQ。 PayOutExtendMessage 12345678/** 支付单流水号 */ private String paySerialId; /** 是否成功（true-成功 2-false） */ private boolean status; /** 描述信息（驳回原因） */ private String message; /** 驳回时间 */ private String rejectTime; 5.2通知逻辑分析目前来说，财务清分收到具体结果之后，通过项目对外支付流水号（ProjectOutwardSerialId）对外发放对外支付结果，目前消费者应该是上述的三个平台，订阅所有的结果MQ，确认最终结果。 六、整体数据清理分析6.1平台分析三个平台通过支付系统申请对外支付后，进入清分系统已经无法区分出具体业务申请原因，所以对于赔付的数据梳理困难，目前的想法就是区分具体的申请平台，而且申请原因也需要进一步细分（可以考虑细分对外支付单类型）。 6.2功能分析对外支付功能，最初的想法就仅仅是进行订单的退款使用，但是现在另外一大作用是进行赔付，虽然对外支付确实可以使用并且在一定范围内使用简单，但是总感觉一个退款功能为主的接口用作赔付总会有欠缺，更重要的就是很难对数据进行监控，赔付这种业务还是有搞头的。]]></content>
       <categories>
-          
-          <category> Company </category>
-          
+        <category>Company</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> TCYL </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>简直就是神仙画画</title>
-      <link href="/2019/01/30/%E7%AE%80%E7%9B%B4%E5%B0%B1%E6%98%AF%E7%A5%9E%E4%BB%99%E7%94%BB%E7%94%BB/"/>
-      <url>/2019/01/30/%E7%AE%80%E7%9B%B4%E5%B0%B1%E6%98%AF%E7%A5%9E%E4%BB%99%E7%94%BB%E7%94%BB/</url>
-      
-        <content type="html"><![CDATA[<p><strong><em> 一张图片就直接扎心里了 </em></strong></p><p>这两天刷B站随机随机被安利了一款windows桌面软件（upupoo），结果在大海捞针找壁纸的时候突然一个名词跃入眼帘<br><strong><em> 鬼刀 </em></strong></p><p>这种画风简直就是无法用语言形容，只能说自己没有文化只能一句卧槽走天下！<br><a id="more"></a></p><p>后来才知道大佬本职也是程序员，副业才是画画 - - ，真赤鸡！</p>]]></content>
-      
-      
+      <tags>
+        <tag>TCYL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[简直就是神仙画画]]></title>
+    <url>%2F2019%2F01%2F30%2F%E7%AE%80%E7%9B%B4%E5%B0%B1%E6%98%AF%E7%A5%9E%E4%BB%99%E7%94%BB%E7%94%BB%2F</url>
+    <content type="text"><![CDATA[一张图片就直接扎心里了 这两天刷B站随机随机被安利了一款windows桌面软件（upupoo），结果在大海捞针找壁纸的时候突然一个名词跃入眼帘 鬼刀 这种画风简直就是无法用语言形容，只能说自己没有文化只能一句卧槽走天下！ 后来才知道大佬本职也是程序员，副业才是画画 - - ，真赤鸡！]]></content>
       <categories>
-          
-          <category> DIY </category>
-          
+        <category>DIY</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> CG </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Vue+Node 项目尝试</title>
-      <link href="/2019/01/25/Vue-Node-%E9%A1%B9%E7%9B%AE%E5%B0%9D%E8%AF%95/"/>
-      <url>/2019/01/25/Vue-Node-%E9%A1%B9%E7%9B%AE%E5%B0%9D%E8%AF%95/</url>
-      
-        <content type="html"><![CDATA[<p>公司一个移动端项目使用Vue做页面，node中间件可以使用axios实现跨域请求，node作为代理实现跨域非常方面，所以有兴趣多了解一下。<br><a id="more"></a></p><h3 id="Vue-vux"><a href="#Vue-vux" class="headerlink" title="Vue(vux)"></a>Vue(vux)</h3><h3 id="Node-axios"><a href="#Node-axios" class="headerlink" title="Node(axios)"></a>Node(axios)</h3>]]></content>
-      
-      
-      
-    </entry>
-    
-    <entry>
-      <title>尺八 | 疯了非要自己做一个</title>
-      <link href="/2018/11/28/%E5%B0%BA%E5%85%AB-%E7%96%AF%E4%BA%86%E9%9D%9E%E8%A6%81%E8%87%AA%E5%B7%B1%E5%81%9A%E4%B8%80%E4%B8%AA/"/>
-      <url>/2018/11/28/%E5%B0%BA%E5%85%AB-%E7%96%AF%E4%BA%86%E9%9D%9E%E8%A6%81%E8%87%AA%E5%B7%B1%E5%81%9A%E4%B8%80%E4%B8%AA/</url>
-      
-        <content type="html"><![CDATA[<p>为什么突然看上尺八了呢，第一就是稀少，毕竟国内玩得人不多，然后就是受到了火影忍者的影响，就想搞个尺八自己吹一吹（情怀）。<br><a id="more"></a></p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=784594&auto=0&height=66"></iframe><p>目前呢提到尺八，第一印象就是认为它是日本的乐器，但是日本的文化基本都是中国传过去的，所以尺八的老祖宗还是我们。</p><blockquote class="blockquote-center"><p>尺八，中国吴地传统乐器，后传入日本。此尺八非彼尺八，竹制，外切口，五孔（前四后一），属边棱振动气鸣吹管乐器，以管长一尺八寸而得名，其音色苍凉辽阔，又能表现空灵、恬静的意境。</p></blockquote><p>   在日本奈良东大寺的正仓院里，还保存着我国唐代传去的八支唐式尺八。其中一只竹制刻雕尺八，长43.7厘米，管上端开口，管身前面五孔后面一孔。每一按音孔边缘有圆形花纹。制作十分精美，通体雕花纹和仕女像。第一孔上刻有二女，一者俯而摘花，一者立其后作张袖状。后面一孔下有一女立而手执扇，另一女坐弹琵琶。其余部分均饰以花鸟纹。此外还有玉尺八、牙尺八、雕石尺八和桦卷尺八等。<br>   尺八发展到宋代形成五孔尺八，并经由当时日本的遣唐僧东传日本，保留至今，其技巧复杂，音色独特而有古味。沈括《梦溪笔谈》载：“后汉马融所赋长笛，空洞无底，剡其上孔，五孔，一孔出其背，正似今之尺八”。</p><p>以上的内容是从百度找来的，反正尺八还是咱们老祖宗的东西，这个事实还是有历史佐证的。</p><p><strong>下面就重点了</strong></p><p>心血来潮之后就兴致满满的上淘宝了，当时就想马云的大淘宝肯定找得到，上去之后发现，确实没有失望，但是也太贵了！！！<br><img src="https://i.loli.net/2018/11/28/5bfe58214b209.png" alt="chiba_taobao.png"><br>感受一下这个价格这还是普通的，虽然是心血来潮了，但是一下烧这么多人民的币还是有点肉疼。</p><p>So 我决定自己搞!！</p><h2 id="DIY尺八挑战"><a href="#DIY尺八挑战" class="headerlink" title="DIY尺八挑战"></a>DIY尺八挑战</h2><p>首先先看下百度怎么说（想谷歌还是等老天开开眼吧）<br><blockquote class="blockquote-center"><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>尺八和箫是否有联系，现已难以考证。尺八以竹根制作，中通无底，管体一尺八寸，歌口为外切半月形，正面开四个按孔，背面开一个按孔。<br>尺八的制作非常复杂。</p><h3 id="选材"><a href="#选材" class="headerlink" title="选材"></a>选材</h3><p>需选择较粗，竹纤维紧密，内壁较厚的竹材，因桂竹较适合，因此90%的尺八皆选桂竹(日本称真竹)为材料。<br>竹材目挑选也非常有讲究，因歌口必须在竹节上，切各个孔必须在距离竹节特定距离，所以，选用制作尺八的竹材节距有非常严格的要求。加上一般尺八必须带根部，一片竹林中仅有一两只适合制作尺八。所以尺八的价格也因此增加不少。对于节距离要求，除歌口必须在竹节之外，其他距离为美观要求，并非必须。<br>尺八的歌口为外切，而箫为内切，这是箫和尺八的区别之一，购买时请注意。唐代没有内切歌口。歌口切法的不同会造成吹奏技巧的天壤之别。<br>竹材挖掘之后经过一定处理，必须存放三年以上，才可以制作尺八。<br>粗胚做好之后，现代尺八需要根据竹材条件进行内壁的填充，以实现内壁达到设计要求的曲线。这个过程是制作尺八的最难之处，由于全部过程为手工完成，在狭小的空间内，用锉刀磨具之类的工具作出完全符合图纸上的曲线是非常需要经验的，好的曲线能让尺八音色更加完美。也会更加好吹。国际上常用的填充材料为生漆+砥石粉的混合物。当然，也有用塑胶作为内壁的新方法。</p><h3 id="外表"><a href="#外表" class="headerlink" title="外表"></a>外表</h3><p>需要用古老的生漆做一层薄薄的保护层。而内壁则需要用黑色，或者朱红生漆做保护。</p></blockquote></p><p>这么一看没多复杂啊，总结一下一尺八寸的竹竿，干通，开孔，刷漆，搞定！<br>事实证明我弱智了。</p><h2 id="仔细分析"><a href="#仔细分析" class="headerlink" title="仔细分析"></a>仔细分析</h2><p>只能说做一个乐器没有想象中的那么容易，还是踏踏实实慢慢来吧。</p><h3 id="细说选材"><a href="#细说选材" class="headerlink" title="细说选材"></a>细说选材</h3><p>先说说日本那边保存完整的制作工艺的要求吧。。</p><p>尺八的选材一般是使用桂竹(日本称真竹)，最好内壁厚（可以调出完美的音调曲线），竹纤维紧密（个人认为会影响到音色和手感），尺八的歌口需要在竹节处，且一般都保留竹根，所以选材方面还是挺麻烦的，而且最关键一点，日本尺八制作需要把竹子先放三年阴干，这个我就没办法了，只能使用著名的火烤大法来搞定了。</p><h3 id="简单说制作"><a href="#简单说制作" class="headerlink" title="简单说制作"></a>简单说制作</h3><p>搞定选材，还有火烤大法，简单看下制作流程</p><h4 id="第一就是歌口"><a href="#第一就是歌口" class="headerlink" title="第一就是歌口"></a>第一就是歌口</h4><p>歌口必须在竹节处，这个还是蛮好处理的，但是尺八歌口都是外切，所以切口处很容易潮湿腐坏，或者出现磨损，一般用牛角塑料等作为切口填充物</p><h3 id="第二最关键的内径"><a href="#第二最关键的内径" class="headerlink" title="第二最关键的内径"></a>第二最关键的内径</h3><p>日本那边有句老话，尺八都是磨出来的，因为尺八的制作需要按照老一辈传下来的数据进行打磨，才能得到完美的音色，所以尺八的内径制作都是靠磨具一点点修补出来的，还有情况就是在不足的地方还需要用补土的方式进行填充，这个就要命了。</p><h2 id="找点资料吧"><a href="#找点资料吧" class="headerlink" title="找点资料吧"></a>找点资料吧</h2><p><img src="http://s13.sinaimg.cn/large/001Ml6S2zy74kS1glzKcc" alt="尺八制作数据公开"><br>目前现代管能找到的，基本都是按照这个标准来的。</p><p>烤竹子也找到资料了，官方说法叫竹料油拔</p><p>还有一些技巧 水桶橡皮筋找闭管音。<br><img src="https://i.loli.net/2018/11/28/5bfe60f6e3eae.png" alt="水桶调音.png"></p><p>目前能找到的材料就是这些了，等搞到竹子之后再更新制作过程吧，真心期待自己能做一个出来，不管音准不准，先能吹响。。。</p>]]></content>
-      
-      
+      <tags>
+        <tag>CG</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Vue+Node 项目尝试]]></title>
+    <url>%2F2019%2F01%2F25%2FVue-Node-%E9%A1%B9%E7%9B%AE%E5%B0%9D%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[公司一个移动端项目使用Vue做页面，node中间件可以使用axios实现跨域请求，node作为代理实现跨域非常方面，所以有兴趣多了解一下。 Vue(vux)Node(axios)]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[尺八 | 疯了非要自己做一个]]></title>
+    <url>%2F2018%2F11%2F28%2F%E5%B0%BA%E5%85%AB-%E7%96%AF%E4%BA%86%E9%9D%9E%E8%A6%81%E8%87%AA%E5%B7%B1%E5%81%9A%E4%B8%80%E4%B8%AA%2F</url>
+    <content type="text"><![CDATA[为什么突然看上尺八了呢，第一就是稀少，毕竟国内玩得人不多，然后就是受到了火影忍者的影响，就想搞个尺八自己吹一吹（情怀）。 目前呢提到尺八，第一印象就是认为它是日本的乐器，但是日本的文化基本都是中国传过去的，所以尺八的老祖宗还是我们。 尺八，中国吴地传统乐器，后传入日本。此尺八非彼尺八，竹制，外切口，五孔（前四后一），属边棱振动气鸣吹管乐器，以管长一尺八寸而得名，其音色苍凉辽阔，又能表现空灵、恬静的意境。 在日本奈良东大寺的正仓院里，还保存着我国唐代传去的八支唐式尺八。其中一只竹制刻雕尺八，长43.7厘米，管上端开口，管身前面五孔后面一孔。每一按音孔边缘有圆形花纹。制作十分精美，通体雕花纹和仕女像。第一孔上刻有二女，一者俯而摘花，一者立其后作张袖状。后面一孔下有一女立而手执扇，另一女坐弹琵琶。其余部分均饰以花鸟纹。此外还有玉尺八、牙尺八、雕石尺八和桦卷尺八等。 尺八发展到宋代形成五孔尺八，并经由当时日本的遣唐僧东传日本，保留至今，其技巧复杂，音色独特而有古味。沈括《梦溪笔谈》载：“后汉马融所赋长笛，空洞无底，剡其上孔，五孔，一孔出其背，正似今之尺八”。 以上的内容是从百度找来的，反正尺八还是咱们老祖宗的东西，这个事实还是有历史佐证的。 下面就重点了 心血来潮之后就兴致满满的上淘宝了，当时就想马云的大淘宝肯定找得到，上去之后发现，确实没有失望，但是也太贵了！！！感受一下这个价格这还是普通的，虽然是心血来潮了，但是一下烧这么多人民的币还是有点肉疼。 So 我决定自己搞!！ DIY尺八挑战首先先看下百度怎么说（想谷歌还是等老天开开眼吧）概述尺八和箫是否有联系，现已难以考证。尺八以竹根制作，中通无底，管体一尺八寸，歌口为外切半月形，正面开四个按孔，背面开一个按孔。尺八的制作非常复杂。 选材需选择较粗，竹纤维紧密，内壁较厚的竹材，因桂竹较适合，因此90%的尺八皆选桂竹(日本称真竹)为材料。竹材目挑选也非常有讲究，因歌口必须在竹节上，切各个孔必须在距离竹节特定距离，所以，选用制作尺八的竹材节距有非常严格的要求。加上一般尺八必须带根部，一片竹林中仅有一两只适合制作尺八。所以尺八的价格也因此增加不少。对于节距离要求，除歌口必须在竹节之外，其他距离为美观要求，并非必须。尺八的歌口为外切，而箫为内切，这是箫和尺八的区别之一，购买时请注意。唐代没有内切歌口。歌口切法的不同会造成吹奏技巧的天壤之别。竹材挖掘之后经过一定处理，必须存放三年以上，才可以制作尺八。粗胚做好之后，现代尺八需要根据竹材条件进行内壁的填充，以实现内壁达到设计要求的曲线。这个过程是制作尺八的最难之处，由于全部过程为手工完成，在狭小的空间内，用锉刀磨具之类的工具作出完全符合图纸上的曲线是非常需要经验的，好的曲线能让尺八音色更加完美。也会更加好吹。国际上常用的填充材料为生漆+砥石粉的混合物。当然，也有用塑胶作为内壁的新方法。 外表需要用古老的生漆做一层薄薄的保护层。而内壁则需要用黑色，或者朱红生漆做保护。 这么一看没多复杂啊，总结一下一尺八寸的竹竿，干通，开孔，刷漆，搞定！事实证明我弱智了。 仔细分析只能说做一个乐器没有想象中的那么容易，还是踏踏实实慢慢来吧。 细说选材先说说日本那边保存完整的制作工艺的要求吧。。 尺八的选材一般是使用桂竹(日本称真竹)，最好内壁厚（可以调出完美的音调曲线），竹纤维紧密（个人认为会影响到音色和手感），尺八的歌口需要在竹节处，且一般都保留竹根，所以选材方面还是挺麻烦的，而且最关键一点，日本尺八制作需要把竹子先放三年阴干，这个我就没办法了，只能使用著名的火烤大法来搞定了。 简单说制作搞定选材，还有火烤大法，简单看下制作流程 第一就是歌口歌口必须在竹节处，这个还是蛮好处理的，但是尺八歌口都是外切，所以切口处很容易潮湿腐坏，或者出现磨损，一般用牛角塑料等作为切口填充物 第二最关键的内径日本那边有句老话，尺八都是磨出来的，因为尺八的制作需要按照老一辈传下来的数据进行打磨，才能得到完美的音色，所以尺八的内径制作都是靠磨具一点点修补出来的，还有情况就是在不足的地方还需要用补土的方式进行填充，这个就要命了。 找点资料吧目前现代管能找到的，基本都是按照这个标准来的。 烤竹子也找到资料了，官方说法叫竹料油拔 还有一些技巧 水桶橡皮筋找闭管音。 目前能找到的材料就是这些了，等搞到竹子之后再更新制作过程吧，真心期待自己能做一个出来，不管音准不准，先能吹响。。。]]></content>
       <categories>
-          
-          <category> DIY </category>
-          
+        <category>DIY</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> music </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Atom | 帅气的编辑器</title>
-      <link href="/2018/11/20/Atom-%E5%B8%85%E6%B0%94%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8/"/>
-      <url>/2018/11/20/Atom-%E5%B8%85%E6%B0%94%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8/</url>
-      
-        <content type="html"><![CDATA[<p><strong> Atom 文本编辑器 </strong>，是由Github出品的基于 Electron/Nodejs的半开源文本编辑器。<a href="https://atom.io" target="_blank" rel="noopener">传送门</a></p><a id="more"></a><p>扯淡的东西稍后再写。。。</p><p>反正就是比较牛逼了、、、</p>]]></content>
-      
-      
+      <tags>
+        <tag>music</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Atom | 帅气的编辑器]]></title>
+    <url>%2F2018%2F11%2F20%2FAtom-%E5%B8%85%E6%B0%94%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%2F</url>
+    <content type="text"><![CDATA[Atom 文本编辑器 ，是由Github出品的基于 Electron/Nodejs的半开源文本编辑器。传送门 扯淡的东西稍后再写。。。 反正就是比较牛逼了、、、]]></content>
       <categories>
-          
-          <category> IDE </category>
-          
+        <category>IDE</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> IDE </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Stan Lee的漫威宇宙</title>
-      <link href="/2018/11/15/Stan-Lee%E7%9A%84%E6%BC%AB%E5%A8%81%E5%AE%87%E5%AE%99/"/>
-      <url>/2018/11/15/Stan-Lee%E7%9A%84%E6%BC%AB%E5%A8%81%E5%AE%87%E5%AE%99/</url>
-      
-        <content type="html"><![CDATA[<p><strong> 漫威失去了最伟大的超级英雄和最重要的彩蛋，可是超级英雄电影会继续 </strong><br><a id="more"></a></p><p><img src="https://s1.ax2x.com/2018/11/15/5zyril.gif" alt="5zyril.gif"><br><strong><em> Excelsior  </em></strong><br><blockquote class="blockquote-center"><p>You know, my motto is ‘Excelsior.’ That’s an old word that means ‘upward and onward to greater glory.’ Keep moving forward, and if it’s time to go, it’s time. Nothing lasts forever.</p></blockquote><br>斯坦·李曾说：<br>我的座右铭就是“Excelsior”，这是一个古老的词，意思是“朝着更光辉的伟业向上、前进”。勇往直前吧，如果是时候前进了，就前进。没有什么天长地久，抓住眼前。</p><p>在六十年代早期，李被要求去组建一个超级英雄团队来同DC旗下的“正义联盟”竞争。在杰克·科比（Jack Kirby）和史蒂夫·迪克特（Steve Ditko）等人的鼎力相助下，斯坦·李促成了一场革命，尽管他当时并没有预见这一点。<br><img src="https://s1.ax2x.com/2018/11/15/5zyLhB.jpg" alt="5zyLhB.jpg"></p><p>1941年，斯坦利生平第一部作品问世，它就是《美国队长》系列漫画的第三部，斯坦利负责填写内容，漫画由别人来画。他开始第一次使用笔名“斯坦·李”。</p><p>他第一次在荧屏上露脸是1989年的电视电影《无敌浩克的审判》。</p><p>老爷子一生有过太多的坎坷，太多的故事，一路走过他用着自己过往创造出属于这个世界的超级英雄。</p><blockquote><p>蜘蛛侠  寄住在收入不高的伯父伯母家里，生活窘迫，在学校受同学欺负，自卑而内向</p></blockquote><blockquote><p>美国队长 原本瘦弱多病，是被人嘲笑和欺负的对象，他最大的优势就是挨打时经打，以及嘴硬</p></blockquote><p>在斯坦·李的英雄世界里，做一个超级英雄并不是一件容易的事情。</p><p>斯坦·李告诉我们，能力越大责任越大，要追求自由，也要心怀世界。</p><p>2018年11月12日老爷子走了，但是超级英雄的时代还远远没有结束…</p><p><img src="https://s1.ax2x.com/2018/11/15/5zyfkz.gif" alt="5zyfkz.gif"></p>]]></content>
-      
-      
+      <tags>
+        <tag>IDE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Stan Lee的漫威宇宙]]></title>
+    <url>%2F2018%2F11%2F15%2FStan-Lee%E7%9A%84%E6%BC%AB%E5%A8%81%E5%AE%87%E5%AE%99%2F</url>
+    <content type="text"><![CDATA[漫威失去了最伟大的超级英雄和最重要的彩蛋，可是超级英雄电影会继续 Excelsior You know, my motto is ‘Excelsior.’ That’s an old word that means ‘upward and onward to greater glory.’ Keep moving forward, and if it’s time to go, it’s time. Nothing lasts forever. 斯坦·李曾说：我的座右铭就是“Excelsior”，这是一个古老的词，意思是“朝着更光辉的伟业向上、前进”。勇往直前吧，如果是时候前进了，就前进。没有什么天长地久，抓住眼前。 在六十年代早期，李被要求去组建一个超级英雄团队来同DC旗下的“正义联盟”竞争。在杰克·科比（Jack Kirby）和史蒂夫·迪克特（Steve Ditko）等人的鼎力相助下，斯坦·李促成了一场革命，尽管他当时并没有预见这一点。 1941年，斯坦利生平第一部作品问世，它就是《美国队长》系列漫画的第三部，斯坦利负责填写内容，漫画由别人来画。他开始第一次使用笔名“斯坦·李”。 他第一次在荧屏上露脸是1989年的电视电影《无敌浩克的审判》。 老爷子一生有过太多的坎坷，太多的故事，一路走过他用着自己过往创造出属于这个世界的超级英雄。 蜘蛛侠 寄住在收入不高的伯父伯母家里，生活窘迫，在学校受同学欺负，自卑而内向 美国队长 原本瘦弱多病，是被人嘲笑和欺负的对象，他最大的优势就是挨打时经打，以及嘴硬 在斯坦·李的英雄世界里，做一个超级英雄并不是一件容易的事情。 斯坦·李告诉我们，能力越大责任越大，要追求自由，也要心怀世界。 2018年11月12日老爷子走了，但是超级英雄的时代还远远没有结束…]]></content>
       <categories>
-          
-          <category> Movie </category>
-          
+        <category>Movie</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Movie </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>We are Venom</title>
-      <link href="/2018/11/15/We-are-Venom/"/>
-      <url>/2018/11/15/We-are-Venom/</url>
-      
-        <content type="html"><![CDATA[<p>《毒液：致命守护者》(Venom)<br>主   演 : 汤姆·哈迪<br>上映时间 : 2018年11月9日在中国大陆上映</p><a id="more"></a><p>什么是超级英雄，漫威和DC从来没有正面的说出超级英雄的标准定义。我们通过电影总结出超级英雄他们拥有超越普通人的特殊能力，可以做出一些不同寻常的壮举和英勇的行为，这些一类人（或者不是人）就被我们称为超级英雄。</p><p>最近的一段时间，漫威在超级英雄的塑造方面真的是越来越超脱了，简直就是颠覆了我们对于内心中超级英雄的定义。首先的就是死侍，突出的特点就是一个字 – 贱！我估计也只有这一个超级英雄会被授予这种评价。</p><p><strong> 再来就是我们今天所说的主角了毒液（Venom）。 </strong></p><p>再没有看电影之前，对于毒液的认知还存在与老版本的蜘蛛侠3（2007年山姆·雷米导演），当时的我们理解的毒液就是一个外星寄生兽，可以强化宿主的能力，同样可以放大宿主的邪念。</p><p>但是走进电影院才发现，所有的一切都被颠覆了，毒液仅仅是那种外星寄生兽中一个小屌丝，来到了地球才发现自己原来可以这么强大，这个星球可以这么有趣，这里的景色可以这么美丽，所以影片中毒液给我的感觉就是强大加上一点点的蠢萌，我喜欢这个不是那么好看但是却可以走到我心中的超级英雄。</p><p><img src="https://s1.ax2x.com/2018/11/15/5zveMN.jpg" alt="5zveMN.jpg"><br><img src="https://s1.ax2x.com/2018/11/15/5zyXf2.jpg" alt="5zyXf2.jpg"><br><img src="https://s1.ax2x.com/2018/11/15/5zyTcQ.gif" alt="5zyTcQ.gif"><br><img src="https://s1.ax2x.com/2018/11/15/5zyHQE.gif" alt="5zyHQE.gif"><br><img src="https://s1.ax2x.com/2018/11/15/5zyBgn.jpg" alt="5zyBgn.jpg"><br><img src="https://s1.ax2x.com/2018/11/15/5zy593.gif" alt="5zy593.gif"><br><img src="https://s1.ax2x.com/2018/11/15/5zvqJ6.jpg" alt="5zvqJ6.jpg"><br><img src="https://s1.ax2x.com/2018/11/15/5zyYIS.jpg" alt="5zyYIS.jpg"><br><img src="https://s1.ax2x.com/2018/11/15/5zyVZz.jpg" alt="5zyVZz.jpg"><br><img src="https://s1.ax2x.com/2018/11/15/5zyzXa.jpg" alt="5zyzXa.jpg"><br><img src="https://s1.ax2x.com/2018/11/15/5zyDUG.jpg" alt="5zyDUG.jpg"><br><img src="https://s1.ax2x.com/2018/11/15/5zy9OK.jpg" alt="5zy9OK.jpg"></p><p><strong> 总结一句，很棒的电影！ </strong></p>]]></content>
-      
-      
+      <tags>
+        <tag>Movie</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[We are Venom]]></title>
+    <url>%2F2018%2F11%2F15%2FWe-are-Venom%2F</url>
+    <content type="text"><![CDATA[《毒液：致命守护者》(Venom)主 演 : 汤姆·哈迪上映时间 : 2018年11月9日在中国大陆上映 什么是超级英雄，漫威和DC从来没有正面的说出超级英雄的标准定义。我们通过电影总结出超级英雄他们拥有超越普通人的特殊能力，可以做出一些不同寻常的壮举和英勇的行为，这些一类人（或者不是人）就被我们称为超级英雄。 最近的一段时间，漫威在超级英雄的塑造方面真的是越来越超脱了，简直就是颠覆了我们对于内心中超级英雄的定义。首先的就是死侍，突出的特点就是一个字 – 贱！我估计也只有这一个超级英雄会被授予这种评价。 再来就是我们今天所说的主角了毒液（Venom）。 再没有看电影之前，对于毒液的认知还存在与老版本的蜘蛛侠3（2007年山姆·雷米导演），当时的我们理解的毒液就是一个外星寄生兽，可以强化宿主的能力，同样可以放大宿主的邪念。 但是走进电影院才发现，所有的一切都被颠覆了，毒液仅仅是那种外星寄生兽中一个小屌丝，来到了地球才发现自己原来可以这么强大，这个星球可以这么有趣，这里的景色可以这么美丽，所以影片中毒液给我的感觉就是强大加上一点点的蠢萌，我喜欢这个不是那么好看但是却可以走到我心中的超级英雄。 总结一句，很棒的电影！]]></content>
       <categories>
-          
-          <category> Movie </category>
-          
+        <category>Movie</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Movie </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Pulsar替代Kafka？</title>
-      <link href="/2018/11/08/Pulsar%E6%9B%BF%E4%BB%A3Kafka%EF%BC%9F/"/>
-      <url>/2018/11/08/Pulsar%E6%9B%BF%E4%BB%A3Kafka%EF%BC%9F/</url>
-      
-        <content type="html"><![CDATA[<p><strong> Pulsar是否要替代Kafka？ </strong></p><a id="more"></a><p>具体内容我也没看呢，反正先占着位置</p><blockquote class="blockquote-center"><p>有一篇文章可以先看看<a href="https://blog.csdn.net/liyiming2017/article/details/82875068" target="_blank" rel="noopener">未来是Pulsar的吗</a></p></blockquote><p><strong> 个人理解的 Pulsar 优势 </strong></p><p>相对于kafka来说，Pulsar的优势就是数据与服务的隔离，Pulsar数据单独存储在BookKeeper中。<br>而且在后续上还要引入sql查询系统，方便进行数据的分析而且对于集群的调整非常方便。</p>]]></content>
-      
-      
+      <tags>
+        <tag>Movie</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Pulsar替代Kafka？]]></title>
+    <url>%2F2018%2F11%2F08%2FPulsar%E6%9B%BF%E4%BB%A3Kafka%EF%BC%9F%2F</url>
+    <content type="text"><![CDATA[Pulsar是否要替代Kafka？ 具体内容我也没看呢，反正先占着位置 有一篇文章可以先看看未来是Pulsar的吗 个人理解的 Pulsar 优势 相对于kafka来说，Pulsar的优势就是数据与服务的隔离，Pulsar数据单独存储在BookKeeper中。而且在后续上还要引入sql查询系统，方便进行数据的分析而且对于集群的调整非常方便。]]></content>
       <categories>
-          
-          <category> 消息队列 </category>
-          
+        <category>消息队列</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Pulsar </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Hexo(Next) + GitHub + Netlify</title>
-      <link href="/2018/11/06/Hexo-Next-GitHub-Netlify/"/>
-      <url>/2018/11/06/Hexo-Next-GitHub-Netlify/</url>
-      
-        <content type="html"><![CDATA[<p><strong> 18步搞定自动发布个人博客 </strong></p><a id="more"></a><p>本篇文章就是按照最基本的操作来完成的一个自动化博客搭建，完全的傻瓜式的操作，跟着教程绝对搞的定。</p><p><strong> 重点是这个教程是Windows系统的，OS/Linux自行根据步骤脑补一下 </strong></p><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>我们用到的主要环境就是Node.js，这玩意是根本，所以搞定它！</p><h3 id="1、Node-js"><a href="#1、Node-js" class="headerlink" title="1、Node.js"></a>1、Node.js</h3><p>官网直接下载完事，根据自己的系统整一个最新版的安装吧<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">没有环境的去下载</a></p><h3 id="2、GitBash"><a href="#2、GitBash" class="headerlink" title="2、GitBash"></a>2、GitBash</h3><p>同样的另一个必要环节，Git没有的话也去下载安装一个,也搞最新的版本吧<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">没有的也去整一个</a></p><h3 id="3、-检查环境是否搞定"><a href="#3、-检查环境是否搞定" class="headerlink" title="3、 检查环境是否搞定"></a>3、 检查环境是否搞定</h3><p>检查Node.js 有没有搞定</p><blockquote><p>node -v</p></blockquote><p><img src="https://i.loli.net/2018/11/09/5be52ef99d917.jpg" alt="Node.js"></p><p>检查GitBash有没有搞定直接选个文件夹鼠标右键就OK<br><img src="https://i.loli.net/2018/11/09/5be52ef949c3c.png" alt="GitBash"></p><h3 id="4、注册一个Github"><a href="#4、注册一个Github" class="headerlink" title="4、注册一个Github"></a>4、注册一个Github</h3><p>Github我们直接注册一个，注册都不会的就放弃吧<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></p><h2 id="环境准备完毕，下面就正式开始了"><a href="#环境准备完毕，下面就正式开始了" class="headerlink" title="环境准备完毕，下面就正式开始了"></a>环境准备完毕，下面就正式开始了</h2><h3 id="5、看心情选位置建个文件夹"><a href="#5、看心情选位置建个文件夹" class="headerlink" title="5、看心情选位置建个文件夹"></a>5、看心情选位置建个文件夹</h3><p>在当前文件夹下启动命令行，之前我们已经安装了gitbash所以可以直接右键启动gitbash或许方便一些<br><img src="https://i.loli.net/2018/11/12/5be8d7fce5cdf.png" alt="gitbashhear.png"></p><h3 id="6、安装hexo"><a href="#6、安装hexo" class="headerlink" title="6、安装hexo"></a>6、安装hexo</h3><p>下面重点就来了，我们用的是Hexo框架，Hexo本身就集成blog框架，而且目前已经有很多成熟的主题可以使用所以我们直接选择使用hexo</p><p>安装指令：</p><blockquote><p>npm install hexo -g</p></blockquote><p>这个过程可能需要一点点时间，不要着急静静等待<br><img src="https://i.loli.net/2018/11/12/5be8d956353a5.png" alt="installHexoo.png"></p><h3 id="7、检查hexo是否成功安装"><a href="#7、检查hexo是否成功安装" class="headerlink" title="7、检查hexo是否成功安装"></a>7、检查hexo是否成功安装</h3><p> 同样我们确认一下hexo是否成功安装</p><blockquote><p>hexo -v</p></blockquote><p> <img src="https://i.loli.net/2018/11/12/5be8de7c63ff2.png" alt="hexo-v.png"></p><h3 id="8、hexo初始化"><a href="#8、hexo初始化" class="headerlink" title="8、hexo初始化"></a>8、hexo初始化</h3><p>成功安装完hexo，我们就可以对hexo进行初始化，就是拉取hexo的框架代码，这一步骤时间可能会久一点，毕竟是下载文件</p><blockquote><p>hexo init</p></blockquote><p>等待的过程中你可以看见文件一点点被下载过来，最后你会看见提示 Start blogging with Hexo！是不是很激动了！<br><img src="https://i.loli.net/2018/11/12/5be8da5f9b3c6.png" alt="hexointi.png"></p><h3 id="9、安装需要的组件"><a href="#9、安装需要的组件" class="headerlink" title="9、安装需要的组件"></a>9、安装需要的组件</h3><p>初始化完成后，我们需要继续安装hexo的其他组件</p><blockquote><p>npm install</p></blockquote><p><img src="https://i.loli.net/2018/11/12/5be8db3515f02.png" alt="npm-install.png"></p><h3 id="10、hexo生成"><a href="#10、hexo生成" class="headerlink" title="10、hexo生成"></a>10、hexo生成</h3><p>这时候我们不需要进行修改，先按照模板生成一下(hexo generate 可以直接简写如下)</p><blockquote><p>hexo g</p></blockquote><p>我们可以直接看出指令帮我们生成了静态页面<br><img src="https://i.loli.net/2018/11/12/5be8dc5b5ddde.png" alt="hexog.png"></p><h3 id="11、hexo本地启动"><a href="#11、hexo本地启动" class="headerlink" title="11、hexo本地启动"></a>11、hexo本地启动</h3><p>生成玩页面，我们就让服务在我们本地跑起来(hexo server 可以直接简写如下)</p><blockquote><p>hexo s</p></blockquote><p>这时候本地默认使用的是4000端口，可能会被占用<br><img src="https://i.loli.net/2018/11/12/5be8dcf2e772e.png" alt="port4000.png"><br>我们可以更换本地的端口号(hexo server -p 5000)</p><blockquote><p>hexo s -p 5000</p></blockquote><p><img src="https://i.loli.net/2018/11/12/5be8dd781741e.png" alt="port5000.png"><br>Hexo is running!Hexo is running!Hexo is running!</p><p>在浏览器打开<a href="http://localhost:5000/" target="_blank" rel="noopener">http://localhost:5000/</a> 我们就可以看到Hexo的默认blog主题<br><img src="https://i.loli.net/2018/11/12/5be8ddd37e0d5.png" alt="hexoDefault.png"></p><h3 id="12、新建一篇blog"><a href="#12、新建一篇blog" class="headerlink" title="12、新建一篇blog"></a>12、新建一篇blog</h3><p>我们回到刚刚的命令行，ctrl+c 停止服务，然后新建一片文章</p><blockquote><p>hexo new post “Hexo Hello World!”</p></blockquote><p><img src="https://i.loli.net/2018/11/12/5be8e20b6a122.png" alt="helloworld.png"><br>根据路径找到对应的 .md文件(\source_posts\Hexo-Hello-World.md)就可以使用markdown写我们自己的东西了<br>然后使用</p><blockquote><p>hexo g</p></blockquote><p>打包</p><blockquote><p>hexo s</p></blockquote><p>启动服务，我们就可以看到我们自己新建的文章。</p><h2 id="代码打包上传到并发布"><a href="#代码打包上传到并发布" class="headerlink" title="代码打包上传到并发布"></a>代码打包上传到并发布</h2><h3 id="13、gitbash配置"><a href="#13、gitbash配置" class="headerlink" title="13、gitbash配置"></a>13、gitbash配置</h3><p>gitbash配置可以自行查找教程<a href="https://blog.csdn.net/zzfenglin/article/details/53147840" target="_blank" rel="noopener">附送一个传送门</a></p><h3 id="14、配置hexo的repository"><a href="#14、配置hexo的repository" class="headerlink" title="14、配置hexo的repository"></a>14、配置hexo的repository</h3><p>找到当前文件下的 _config.yml 文件，在文件最后修改repository。</p><blockquote><p>deploy:<br>    type: git<br>    repository: <a href="https://github.com/youname/yourrepo.git" target="_blank" rel="noopener">https://github.com/youname/yourrepo.git</a><br>    branch: master</p></blockquote><h3 id="15、安装hexo打包拓展"><a href="#15、安装hexo打包拓展" class="headerlink" title="15、安装hexo打包拓展"></a>15、安装hexo打包拓展</h3><p>我们在使用打包提交之前需要先安装一个拓展插件</p><blockquote><p>npm install hexo-deployer-git –save</p></blockquote><h3 id="16、打包提交到github"><a href="#16、打包提交到github" class="headerlink" title="16、打包提交到github"></a>16、打包提交到github</h3><p>使用打包与生成指令，生成静态页面并提交到github</p><blockquote><p>hexo d -g</p></blockquote><p>提交成功后你就可以在你的GitHub上面看到自己提交的静态页面代码了</p><h3 id="17、netlify自动部署"><a href="#17、netlify自动部署" class="headerlink" title="17、netlify自动部署"></a>17、netlify自动部署</h3><p>我们可以使用<a href="https://app.netlify.com/" target="_blank" rel="noopener">netlify</a>进行GitHub代码的自动部署，并且可以使用netlify功能进行域名绑定和使用他免费的HTTPS证书。具体教程<a href="https://www.cnblogs.com/codernie/p/9062104.html" target="_blank" rel="noopener">传送门</a>。</p><h3 id="18、自定义域名"><a href="#18、自定义域名" class="headerlink" title="18、自定义域名"></a>18、自定义域名</h3><p>使用netlify的好处就是，我们可以开心的使用自己的域名进行访问（域名不备案也是可以使用的），我们在netlify设置成功后可以获得一个netlify的二级域名，这时候我们可以在自己的域名管理处设置一下CNAME把自己的域名解析到netlify，这样我们就可以开开心心的使用自己的域名访问自己的blog了！<br><img src="https://i.loli.net/2018/11/12/5be8e7dd84669.png" alt="cname.png"></p><p><strong> 18步搞定个人站 </strong></p>]]></content>
-      
-      
+      <tags>
+        <tag>Pulsar</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo(Next) + GitHub + Netlify]]></title>
+    <url>%2F2018%2F11%2F06%2FHexo-Next-GitHub-Netlify%2F</url>
+    <content type="text"><![CDATA[18步搞定自动发布个人博客 本篇文章就是按照最基本的操作来完成的一个自动化博客搭建，完全的傻瓜式的操作，跟着教程绝对搞的定。 重点是这个教程是Windows系统的，OS/Linux自行根据步骤脑补一下 准备工作我们用到的主要环境就是Node.js，这玩意是根本，所以搞定它！ 1、Node.js官网直接下载完事，根据自己的系统整一个最新版的安装吧没有环境的去下载 2、GitBash同样的另一个必要环节，Git没有的话也去下载安装一个,也搞最新的版本吧没有的也去整一个 3、 检查环境是否搞定检查Node.js 有没有搞定 node -v 检查GitBash有没有搞定直接选个文件夹鼠标右键就OK 4、注册一个GithubGithub我们直接注册一个，注册都不会的就放弃吧GitHub 环境准备完毕，下面就正式开始了5、看心情选位置建个文件夹在当前文件夹下启动命令行，之前我们已经安装了gitbash所以可以直接右键启动gitbash或许方便一些 6、安装hexo下面重点就来了，我们用的是Hexo框架，Hexo本身就集成blog框架，而且目前已经有很多成熟的主题可以使用所以我们直接选择使用hexo 安装指令： npm install hexo -g 这个过程可能需要一点点时间，不要着急静静等待 7、检查hexo是否成功安装 同样我们确认一下hexo是否成功安装 hexo -v 8、hexo初始化成功安装完hexo，我们就可以对hexo进行初始化，就是拉取hexo的框架代码，这一步骤时间可能会久一点，毕竟是下载文件 hexo init 等待的过程中你可以看见文件一点点被下载过来，最后你会看见提示 Start blogging with Hexo！是不是很激动了！ 9、安装需要的组件初始化完成后，我们需要继续安装hexo的其他组件 npm install 10、hexo生成这时候我们不需要进行修改，先按照模板生成一下(hexo generate 可以直接简写如下) hexo g 我们可以直接看出指令帮我们生成了静态页面 11、hexo本地启动生成玩页面，我们就让服务在我们本地跑起来(hexo server 可以直接简写如下) hexo s 这时候本地默认使用的是4000端口，可能会被占用我们可以更换本地的端口号(hexo server -p 5000) hexo s -p 5000 Hexo is running!Hexo is running!Hexo is running! 在浏览器打开http://localhost:5000/ 我们就可以看到Hexo的默认blog主题 12、新建一篇blog我们回到刚刚的命令行，ctrl+c 停止服务，然后新建一片文章 hexo new post “Hexo Hello World!” 根据路径找到对应的 .md文件(\source_posts\Hexo-Hello-World.md)就可以使用markdown写我们自己的东西了然后使用 hexo g 打包 hexo s 启动服务，我们就可以看到我们自己新建的文章。 代码打包上传到并发布13、gitbash配置gitbash配置可以自行查找教程附送一个传送门 14、配置hexo的repository找到当前文件下的 _config.yml 文件，在文件最后修改repository。 deploy: type: git repository: https://github.com/youname/yourrepo.git branch: master 15、安装hexo打包拓展我们在使用打包提交之前需要先安装一个拓展插件 npm install hexo-deployer-git –save 16、打包提交到github使用打包与生成指令，生成静态页面并提交到github hexo d -g 提交成功后你就可以在你的GitHub上面看到自己提交的静态页面代码了 17、netlify自动部署我们可以使用netlify进行GitHub代码的自动部署，并且可以使用netlify功能进行域名绑定和使用他免费的HTTPS证书。具体教程传送门。 18、自定义域名使用netlify的好处就是，我们可以开心的使用自己的域名进行访问（域名不备案也是可以使用的），我们在netlify设置成功后可以获得一个netlify的二级域名，这时候我们可以在自己的域名管理处设置一下CNAME把自己的域名解析到netlify，这样我们就可以开开心心的使用自己的域名访问自己的blog了！ 18步搞定个人站]]></content>
       <categories>
-          
-          <category> Hexo 教程 </category>
-          
+        <category>Hexo 教程</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-  
-  
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
 </search>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>喵喵</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/monket-snow.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/monkey-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/monkey-16x16.png">
+		<link rel="stylesheet" type="text/css" href="css/noamalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs_select.css" />
+		<link rel="stylesheet" type="text/css" href="css/css_skin.css" />
+		<link rel="stylesheet" type="text/css" href="css/window.css" />
+	</head>
+	<body class="color-6">
+
+		<section style="width: 30%;float: left;">
+			<label class="select-label">选择需要的特效:</label>
+			<select id="sel" class="cs-select cs-skin-rotate">
+				<option value="0">请选择</option>
+				<option value="1">八方招财（套装）</option>
+				<option value="2">15% 挣脱</option>
+				<option value="3">15% 捉妖圈</option>
+				<option value="4">12% 印记+1</option>
+				<option value="5">5% 云纹+60</option>
+			</select>
+		</section>
+		<div class="right_content">
+			<section style="width: 68%;float: right;text-align: left !important;">
+				<div id="window">
+					<div id="title-bar"><span id="close"></span><span id="min"></span><span id="max"></span><strong id="tilte-title">&nbsp;result</strong></div>
+					<div id="show-board">
+
+					</div>
+				</div>
+			</section>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/clases.js"></script>
+		<script src="js/selectFx.js"></script>
+		<script src="js/print.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/data.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			(function() {
+				[].slice.call(document.querySelectorAll('select.cs-select')).forEach(function(el) {
+					new SelectFx(el);
+				})
+			})();
+
+
+			function selectChange(val) {
+				var arr = [];
+				if (val != 0) {
+					for (let index in data) {
+						if (data[index].value == val) {
+							arr.push(data[index]);
+						}
+					};
+				}
+				print(arr);
+			}
+
+			function minformulaStr(obj) {
+				var str = "";
+				var _RET = " \n";
+				str += "{" + obj.part + "}-" + obj.name + _RET;
+				if (obj.formula.length > 0) {
+					str += "合成配方:" + _RET;
+					var strs = [];
+
+					for (let j in obj.formula) {
+						strs.push("{" + obj.formula[j].part + "}" + obj.formula[j].name);
+					}
+					str += strs.join(" + ");
+					str += _RET;str += _RET;
+				}
+				return str;
+			}
+
+			function print(arr) {
+				$('#show-board').html("");
+				var str = "";
+				var _RET = " \n";
+
+				if (arr.length > 0) {
+					for (let index in arr) {
+						str += minformulaStr(arr[index]);
+						for (let j in arr[index].formula) {
+							if (arr[index].formula[j].formula.length > 0) {
+								str += minformulaStr(arr[index].formula[j]);
+							}
+						}
+						str += "---------------------------------------";
+						str += _RET;
+					};
+				}
+
+
+
+				Printer.init(str, {
+					selector: 'show-board',
+					lnStr: 'search@res ~/ '
+				}).print();
+			}
+		</script>
+	</body>
+</html>
